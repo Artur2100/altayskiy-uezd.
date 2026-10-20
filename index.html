@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Алтайский уезд — растительное сырьё и травяные продукты. Знакомьтесь с ассортиментом и переходите к товарам на Ozon.">
+  <meta name="theme-color" content="#f7f8f3">
+  <title>Алтайский уезд — растительная продукция</title>
+  <style>
+    :root{--ink:#243d32;--muted:#6f7e75;--green:#587b53;--green-dark:#3f6341;--pale:#edf2e7;--line:#e4e9e1;--paper:#fff;--cream:#f7f8f3;--brown:#553326}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+    a{color:inherit}button,a{ -webkit-tap-highlight-color:transparent}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:220px}.brand img{width:56px;height:56px;object-fit:contain;border-radius:50%}.brand strong{display:block;font-size:17px;letter-spacing:.01em}.brand small{display:block;color:var(--muted);font-size:11px}
+    nav{display:flex;gap:25px;align-items:center}nav a{text-decoration:none;font-size:13px;color:#40544a}nav a:hover{color:var(--green)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:650;font-size:13px;border:1px solid transparent;transition:.2s}
+    .btn-primary{background:var(--green);color:white}.btn-primary:hover{background:var(--green-dark);transform:translateY(-1px)}.btn-outline{border-color:#a8bba2;background:#fff;color:var(--green-dark)}.btn-outline:hover{background:var(--pale)}
+    .hero{background:linear-gradient(110deg,#f7f8f3 0%,#fff 55%,#eff3e9 100%);overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:35px;align-items:center;min-height:450px;padding:55px 0}
+    .eyebrow{display:inline-block;background:#e9efe2;color:#4d6c4b;border-radius:99px;padding:6px 12px;font-size:12px;font-weight:650;letter-spacing:.02em}
+    h1{font-size:clamp(36px,4.5vw,58px);line-height:1.07;letter-spacing:-.04em;margin:18px 0 18px;max-width:650px}h2{font-size:clamp(25px,3vw,34px);line-height:1.15;letter-spacing:-.025em;margin:0 0 8px}h3{margin:0;font-size:18px;line-height:1.3}.lead{font-size:16px;color:#5c6e63;max-width:510px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.hero-art{position:relative;min-height:320px;display:flex;align-items:center;justify-content:center}.hero-art img{width:min(340px,75%);max-height:340px;object-fit:contain;mix-blend-mode:multiply;filter:drop-shadow(0 18px 25px #243d3212)}.hero-note{position:absolute;right:0;bottom:18px;max-width:190px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px 17px;font-size:13px;color:var(--muted);box-shadow:0 12px 35px #243d320a}.hero-note b{display:block;color:var(--ink);font-size:14px;margin-bottom:3px}
+    section{padding:68px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:25px}.sub{color:var(--muted);margin:5px 0 0;font-size:14px}.text-link{color:var(--green-dark);font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap}
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.product{border:1px solid var(--line);border-radius:18px;padding:20px;background:#fff;display:flex;flex-direction:column;min-height:255px;transition:.2s}.product:hover{border-color:#b7c9b1;transform:translateY(-2px);box-shadow:0 14px 32px #243d3209}.product-top{display:flex;align-items:center;gap:15px;margin-bottom:15px}.plant-icon{width:76px;height:76px;flex:0 0 76px;border-radius:16px;background:var(--pale);display:grid;place-items:center;font-size:35px}.product p{font-size:13px;color:var(--muted);margin:7px 0 17px}.product .btn{margin-top:auto;width:100%}.product .market-note{font-size:11px;color:#89958d;text-align:center;margin-top:8px}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px}.about-panel{border-radius:22px;background:var(--cream);padding:32px}.benefits{display:grid;gap:18px;margin-top:25px}.benefit{display:flex;gap:13px;align-items:flex-start}.benefit-icon{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:#e5edda;font-size:18px;flex:0 0 38px}.benefit b{font-size:14px}.benefit p{font-size:12px;color:var(--muted);margin:2px 0 0}.note-panel{border:1px solid var(--line);border-radius:22px;padding:32px}.note-panel p{color:var(--muted);font-size:14px}.note-panel .caution{border-left:3px solid #a9bd9e;padding-left:14px;color:#5b6b60}
+    .articles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.article{border:1px solid var(--line);border-radius:18px;padding:22px}.article .tag{font-size:11px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.08em}.article h3{margin:12px 0 9px}.article p{font-size:13px;color:var(--muted);margin:0 0 16px}.article a{font-size:13px;color:var(--green-dark);font-weight:700;text-decoration:none}
+    .market{padding:0 0 68px}.market-box{border-radius:22px;background:linear-gradient(110deg,#eff3e9,#f8f8f3);padding:32px;display:flex;justify-content:space-between;align-items:center;gap:24px}.market-box p{color:var(--muted);margin:5px 0 0;font-size:14px}.market-buttons{display:flex;gap:12px;flex-wrap:wrap}.market-btn{min-width:145px;background:#0866ff;color:white}.market-btn.wb{background:#cb168b}
+    footer{border-top:1px solid var(--line);padding:28px 0 20px}.footer-top{display:flex;justify-content:space-between;gap:24px;align-items:center}.footer-links{display:flex;gap:18px;flex-wrap:wrap}.footer-links a{text-decoration:none;font-size:12px;color:var(--muted)}.copyright{font-size:11px;color:#8a968e;margin-top:20px}
+    .mobile-menu{display:none}.smallprint{font-size:11px;color:#89958d}
+    @media(max-width:850px){nav{gap:13px}.nav .btn{display:none}.hero-grid{grid-template-columns:1fr;gap:8px;padding:45px 0}.hero-art{min-height:220px}.hero-art img{width:210px;max-height:230px}.hero-note{right:4%;bottom:8px}.products{grid-template-columns:repeat(2,1fr)}.about-grid{grid-template-columns:1fr}.articles{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){.wrap{width:min(100% - 28px,1160px)}.nav{height:70px}.brand{min-width:0}.brand img{width:45px;height:45px}.brand strong{font-size:15px}.brand small{font-size:10px}nav{display:none}.mobile-menu{display:inline-flex;border:1px solid var(--line);background:white;border-radius:10px;padding:9px 11px;color:var(--ink)}.hero-grid{padding:38px 0 28px}.hero-art{min-height:190px}.hero-art img{width:185px}.hero-note{font-size:11px;max-width:145px;padding:10px 12px}section{padding:48px 0}.section-head{align-items:start;flex-direction:column}.products{grid-template-columns:1fr}.product{min-height:0}.product-top{margin-bottom:8px}.plant-icon{width:64px;height:64px;flex-basis:64px}.articles{grid-template-columns:1fr}.market-box{padding:24px;align-items:flex-start;flex-direction:column}.footer-top{align-items:flex-start;flex-direction:column}.footer-links{gap:12px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="Алтайский уезд — главная">
+      <img src="assets/logo-altayskiy-uezd.jpeg" alt="Символ бренда Алтайский уезд">
+      <span><strong>Алтайский уезд</strong><small>Растительная продукция</small></span>
+    </a>
+    <nav aria-label="Главная навигация">
+      <a href="#home">Главная</a><a href="#catalog">Каталог</a><a href="#about">О бренде</a><a href="#articles">Полезное</a><a href="#contacts">Контакты</a>
+    </nav>
+    <a class="btn btn-outline" href="#catalog">Выбрать продукт ↗</a>
+    <button class="mobile-menu" onclick="document.querySelector('#mobile-nav').hidden=!document.querySelector('#mobile-nav').hidden" aria-label="Открыть меню">☰</button>
+  </div>
+  <div id="mobile-nav" hidden class="wrap" style="padding:0 0 14px;display:flex;gap:16px;flex-wrap:wrap;font-size:13px"><a href="#catalog">Каталог</a><a href="#about">О бренде</a><a href="#articles">Полезное</a><a href="#contacts">Контакты</a></div>
+</header>
+<main>
+  <section class="hero" id="home" style="padding:0">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Растительная продукция</span>
+        <h1>Природа ближе.<br>Выбор осознаннее.</h1>
+        <p class="lead">Знакомьтесь с ассортиментом бренда «Алтайский уезд», изучайте информацию о растительном сырье и выбирайте удобный способ покупки.</p>
+        <div class="actions"><a class="btn btn-primary" href="#catalog">Смотреть каталог <span>→</span></a><a class="btn btn-outline" href="#marketplaces">Где купить?</a></div>
+      </div>
+      <div class="hero-art">
+        <img src="assets/logo-altayskiy-uezd.jpeg" alt="Эмблема Алтайский уезд">
+        <div class="hero-note"><b>Алтайский уезд</b>Продукты растительного происхождения и полезная информация о них.</div>
+      </div>
+    </div>
+  </section>
+  <section id="catalog">
+    <div class="wrap">
+      <div class="section-head"><div><h2>Наш ассортимент</h2><p class="sub">Выберите продукт и перейдите к карточке на Ozon.</p></div><span class="smallprint">6 продуктов в каталоге</span></div>
+      <div class="products">
+        <article class="product"><div class="product-top"><div class="plant-icon" aria-hidden="true">🌿</div><div><h3>Крапива</h3><span class="smallprint">Растительное сырьё</span></div></div><p>Информация о продукте, составе и особенностях хранения.</p><a class="btn btn-primary" href="https://ozon.ru/t/hi4CmtY" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
+        <article class="product"><div class="product-top"><div class="plant-icon" aria-hidden="true">🌼</div><div><h3>Тройчатка</h3><span class="smallprint">Растительный сбор</span></div></div><p>Описание продукта и сведения, указанные продавцом.</p><a class="btn btn-primary" href="https://ozon.ru/t/EIrjkJM" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
+        <article class="product"><div class="product-top"><div class="plant-icon" aria-hidden="true">🌳</div><div><h3>Кора осины молотая</h3><span class="smallprint">Растительное сырьё</span></div></div><p>Узнайте подробности о продукте на странице товара.</p><a class="btn btn-primary" href="https://ozon.ru/t/D4Zgx9P" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
+        <article class="product"><div class="product-top"><div class="plant-icon" aria-hidden="true">🌻</div><div><h3>Пижма</h3><span class="smallprint">Растительное сырьё</span></div></div><p>Информация о продукте и рекомендации по хранению.</p><a class="btn btn-primary" href="https://ozon.ru/t/hi4CKJ6" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
+        <article class="product"><div class="product-top"><div class="plant-icon" aria-hidden="true">🍄</div><div><h3>Чага берёзовая</h3><span class="smallprint">Растительное сырьё</span></div></div><p>Знакомьтесь с информацией о продукте на Ozon.</p><a class="btn btn-primary" href="https://ozon.ru/t/7GnkLVI" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
+        <article class="product"><div class="product-top"><div class="plant-icon" aria-hidden="true">🌱</div><div><h3>Расторопша</h3><span class="smallprint">Семена</span></div></div><p>Подробности о продукте, упаковке и составе — в карточке товара.</p><a class="btn btn-primary" href="https://ozon.ru/t/Crm8JIS" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
+      </div>
+    </div>
+  </section>
+  <section id="about" style="background:#fbfcf9">
+    <div class="wrap about-grid">
+      <div class="about-panel"><span class="eyebrow">О бренде</span><h2 style="margin-top:17px">Алтайский уезд</h2><p class="sub">Сайт для знакомства с растительной продукцией и выбора удобного места покупки.</p>
+        <div class="benefits">
+          <div class="benefit"><span class="benefit-icon">🌱</span><div><b>Понятная информация</b><p>Сведения о товарах собраны в одном месте.</p></div></div>
+          <div class="benefit"><span class="benefit-icon">🔎</span><div><b>Удобный выбор</b><p>Можно сравнить ассортимент и перейти к карточке товара.</p></div></div>
+          <div class="benefit"><span class="benefit-icon">🛍️</span><div><b>Покупка на маркетплейсе</b><p>Оформление заказа происходит на площадке продавца.</p></div></div>
+        </div>
+      </div>
+      <div class="note-panel"><h2>Знание о растениях начинается с информации</h2><p>Мы подготовили раздел с материалами о растительном сырье, его происхождении, хранении и традициях использования.</p><p class="caution">Информация на сайте носит ознакомительный характер и не является медицинской рекомендацией. Не используйте растительное сырьё для лечения или профилактики заболеваний без консультации квалифицированного специалиста. Для отдельных растений существуют противопоказания.</p><p class="smallprint">Перед публикацией добавьте подтверждённые сведения о происхождении сырья, составе, упаковке и документах на продукцию.</p></div>
+    </div>
+  </section>
+  <section id="articles">
+    <div class="wrap">
+      <div class="section-head"><div><h2>Полезные материалы</h2><p class="sub">Информационный раздел о растениях и бережном обращении с сырьём.</p></div></div>
+      <div class="articles">
+        <article class="article"><span class="tag">Хранение</span><h3>Как хранить растительное сырьё</h3><p>Общие принципы: сухое место, защита от прямого солнца и соблюдение условий, указанных на упаковке.</p><a href="#contacts">Предложить тему ↗</a></article>
+        <article class="article"><span class="tag">Выбор</span><h3>На что смотреть при выборе продукта</h3><p>Проверьте состав, массу упаковки, сведения о производителе или продавце и срок годности.</p><a href="#catalog">Посмотреть ассортимент ↗</a></article>
+        <article class="article"><span class="tag">Осознанность</span><h3>Почему важно читать этикетку</h3><p>Информация на упаковке помогает понять назначение продукта, условия хранения и ограничения применения.</p><a href="#about">О бренде ↗</a></article>
+      </div>
+      <p class="smallprint" style="margin-top:14px">Это стартовые тексты-заготовки. Их можно заменить полноценными авторскими статьями после проверки фактов и соответствия требованиям к рекламе и маркировке.</p>
+    </div>
+  </section>
+  <section class="market" id="marketplaces">
+    <div class="wrap market-box"><div><h2>Выбирайте удобный способ покупки</h2><p>Перейдите на маркетплейс и оформите заказ там.</p></div><div class="market-buttons"><a class="btn market-btn" href="#catalog">Товары на Ozon ↗</a><a class="btn market-btn wb" href="#contacts">Wildberries — скоро</a></div></div>
+  </section>
+</main>
+<footer id="contacts">
+  <div class="wrap"><div class="footer-top">
+    <a class="brand" href="#home"><img src="assets/logo-altayskiy-uezd.jpeg" alt=""><span><strong>Алтайский уезд</strong><small>Растительная продукция</small></span></a>
+    <div class="footer-links"><a href="#catalog">Каталог</a><a href="#about">О бренде</a><a href="#articles">Полезное</a><a href="#marketplaces">Где купить</a></div>
+  </div>
+  <p class="smallprint">Контакты продавца и обязательные сведения об ИП будут добавлены после предоставления данных.</p>
+  <div class="copyright">© <span id="year"></span> Алтайский уезд. Все права защищены.</div></div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
