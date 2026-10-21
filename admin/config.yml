@@ -1,0 +1,25 @@
+backend:
+  name: github
+  repo: Artur2100/altayskiy-uezd
+  branch: main
+
+locale: ru
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+publish_mode: simple
+
+collections:
+  - name: "articles"
+    label: "Статьи"
+    folder: "content/articles"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Заголовок", name: "title", widget: "string" }
+      - { label: "Дата публикации", name: "date", widget: "datetime" }
+      - { label: "Краткое описание", name: "description", widget: "text" }
+      - { label: "Текст статьи", name: "body", widget: "markdown" }
