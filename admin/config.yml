@@ -1,6 +1,6 @@
 backend:
-  name: github
-  repo: Artur2100/altayskiy-uezd
+  name: turbo-github
+  turbo_site_id: d3c44932-2375-401e-8533-87fe45541011
   branch: main
 
 locale: ru
