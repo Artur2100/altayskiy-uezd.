@@ -128,6 +128,68 @@
       .footer-top{align-items:flex-start;flex-direction:column}
       .footer-links{gap:12px}
     }
+
+    /* Phase 1 — premium botanical identity */
+    :root{--ink:#18392d;--muted:#718078;--green:#315f45;--green-dark:#204b36;--pale:#e8eee4;--line:#dfe6dc;--paper:#fffdf8;--cream:#f3f1e8;--forest:#102f25}
+    body{color:var(--ink);background:var(--cream)}
+    header{position:fixed;background:rgba(13,42,31,.88);border-bottom:1px solid rgba(255,255,255,.12);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:background .3s,box-shadow .3s}
+    header.is-scrolled{background:rgba(13,42,31,.97);box-shadow:0 10px 35px rgba(8,30,21,.18)}
+    .nav{height:78px}
+    nav{gap:22px}
+    nav a{transition:color .25s,opacity .25s}
+    nav a:hover{color:#d8e8ca}
+    .nav-dropdown{position:relative}
+    .nav-dropdown summary{list-style:none;cursor:pointer;color:#fff;font-size:13px;font-weight:650;text-shadow:0 1px 8px #102b2580;display:flex;align-items:center;gap:7px}
+    .nav-dropdown summary::-webkit-details-marker{display:none}
+    .nav-dropdown summary:after{content:"⌄";font-size:15px;transition:transform .25s}
+    .nav-dropdown[open] summary:after{transform:rotate(180deg)}
+    .dropdown-panel{position:absolute;top:calc(100% + 18px);left:-18px;min-width:220px;padding:10px;background:rgba(17,49,37,.97);border:1px solid rgba(255,255,255,.12);border-radius:16px;box-shadow:0 18px 45px rgba(0,0,0,.2);display:grid;gap:3px}
+    .dropdown-panel a{padding:10px 12px;border-radius:10px;color:#f4f4eb;text-shadow:none;font-weight:500}
+    .dropdown-panel a:hover{background:rgba(255,255,255,.1);color:#fff}
+    .btn{transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,background .3s}
+    .btn:hover{transform:translateY(-3px)}
+    .btn-primary{background:linear-gradient(135deg,#456f4e,#244c37);box-shadow:0 8px 22px rgba(20,61,40,.2)}
+    .btn-primary:hover{background:linear-gradient(135deg,#527e59,#2b5a40);box-shadow:0 12px 28px rgba(20,61,40,.28)}
+    .hero{background-image:linear-gradient(90deg,rgba(7,35,25,.55) 0%,rgba(7,35,25,.27) 48%,rgba(7,35,25,.02) 85%),linear-gradient(0deg,rgba(7,35,25,.2),transparent 45%),url("hero-altai.jpg");background-position:center;background-size:cover}
+    .hero-grid{padding-top:150px}
+    .hero-grid>div:first-child{animation:hero-rise .95s cubic-bezier(.2,.7,.2,1) both}
+    .hero .eyebrow{background:rgba(239,244,230,.92);color:#244b35;box-shadow:0 8px 25px rgba(0,0,0,.1)}
+    .hero h1{letter-spacing:-.055em;text-wrap:balance}
+    #catalog{background:var(--forest);color:#f8f6ed}
+    #catalog .sub,#catalog .smallprint{color:#bdcbbd}
+    .products{gap:18px}
+    .product{position:relative;overflow:hidden;background:#f9f8f1;border:1px solid rgba(255,255,255,.2);border-radius:22px;padding:24px;min-height:270px;box-shadow:0 12px 32px rgba(0,0,0,.12);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s,border-color .35s}
+    .product:before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,#8da77d,#d9e4c9);transform:scaleX(0);transform-origin:left;transition:transform .45s}
+    .product:hover{transform:translateY(-8px);box-shadow:0 24px 48px rgba(0,0,0,.2);border-color:#a8bd9d}
+    .product:hover:before{transform:scaleX(1)}
+    .plant-icon{background:linear-gradient(145deg,#edf2e6,#dce7d6);border-radius:20px;transition:transform .4s}
+    .product:hover .plant-icon{transform:rotate(-5deg) scale(1.06)}
+    .product h3{color:#18392d}
+    .product p{color:#718078}
+    #about{background:#e9e9dd!important}
+    .about-panel{background:linear-gradient(145deg,#153b2d,#0f2d23);color:#f7f5eb;box-shadow:0 18px 42px rgba(19,53,38,.12)}
+    .about-panel .sub,.about-panel .benefit p{color:#c5d1c3}
+    .about-panel .benefit b{color:#f7f5eb}
+    .about-panel .benefit-icon{background:rgba(225,238,215,.13)}
+    .note-panel{background:#fbfaf4;border-color:#dce3d7}
+    #articles,.full-article{background:#f0efe5}
+    .article{background:#fbfaf4;border:1px solid #e0e4d9;border-radius:22px;padding:25px;min-height:245px;transition:transform .4s,box-shadow .4s,border-color .4s}
+    .article:hover{transform:translateY(-6px);box-shadow:0 18px 38px rgba(24,57,45,.1);border-color:#b7c8ae}
+    .article-content{box-shadow:0 18px 45px rgba(24,57,45,.06);border-color:#e1e5d9}
+    .market-box{background:linear-gradient(120deg,#173d2e,#0e2d23);color:#f8f6ed;box-shadow:0 18px 40px rgba(16,47,37,.14)}
+    .market-box p{color:#c7d2c5}
+    footer{background:#0d291f;color:#f5f4eb;border-top:1px solid rgba(255,255,255,.1)}
+    footer .brand strong{color:#fff}
+    footer .brand small,footer .footer-links a,footer .smallprint,footer .copyright{color:#b9c8ba}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}
+    .reveal.is-visible{opacity:1;transform:translateY(0)}
+    .product.reveal:nth-child(2),.article.reveal:nth-child(2){transition-delay:.08s}
+    .product.reveal:nth-child(3),.article.reveal:nth-child(3){transition-delay:.16s}
+    @keyframes hero-rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:850px){nav{gap:13px}.dropdown-panel{left:auto;right:-20px}}
+    @media(max-width:600px){header{background:rgba(13,42,31,.95)}.nav{height:70px}.mobile-menu{border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff}#mobile-nav{background:#123729;border:1px solid rgba(255,255,255,.12);border-radius:0 0 16px 16px;padding:12px 14px!important}#mobile-nav a{color:#f5f4eb;text-decoration:none;padding:7px 9px}.hero-grid{padding-top:120px}.product{padding:21px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+
   </style>
 </head>
 <body>
@@ -139,7 +201,9 @@
     </a>
     <nav aria-label="Главная навигация">
       <a href="#home">Главная</a>
-      <a href="#catalog">Каталог</a>
+      <details class="nav-dropdown"><summary>Каталог</summary><div class="dropdown-panel">
+        <a href="#catalog">Вся продукция</a><a href="#product-nettle">Крапива</a><a href="#product-troychatka">Тройчатка</a><a href="#product-aspen">Кора осины</a><a href="#product-tansy">Пижма</a><a href="#product-chaga">Чага берёзовая</a><a href="#product-milk-thistle">Расторопша</a>
+      </div></details>
       <a href="#about">О бренде</a>
       <a href="#articles">Полезное</a>
       <a href="#contacts">Контакты</a>
@@ -178,12 +242,12 @@
         <span class="smallprint">6 продуктов в каталоге</span>
       </div>
       <div class="products">
-        <article class="product"><div class="product-top"><div class="plant-icon" aria-hidden="true">🌿 </div><div><h3>Крапива</h3><span class="smallprint">Растительное сырьё</span></div></div><p>Информация о продукте, составе и особенностях хранения.</p><a class="btn btn-primary" href="https://ozon.ru/t/hi4CmtY" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
-        <article class="product"><div class="product-top"><div class="plant-icon" aria-hidden="true">🌼 </div><div><h3>Тройчатка</h3><span class="smallprint">Растительный сбор</span></div></div><p>Описание продукта и сведения, указанные продавцом.</p><a class="btn btn-primary" href="https://ozon.ru/t/EIrjkJM" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
-<article class="product"><div class="product-top"><div class="plant-icon" aria-hidden="true">🌳 </div><div><h3>Кора осины молотая</h3><span class="smallprint">Растительное сырьё</span></div></div><p>Узнайте подробности о продукте на странице товара.</p><a class="btn btn-primary" href="https://ozon.ru/t/D4Zgx9P" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
-        <article class="product"><div class="product-top"><div class="plant-icon" aria-hidden="true">🌻 </div><div><h3>Пижма</h3><span class="smallprint">Растительное сырьё</span></div></div><p>Информация о продукте и рекомендации по хранению.</p><a class="btn btn-primary" href="https://ozon.ru/t/hi4CKJ6" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
-        <article class="product"><div class="product-top"><div class="plant-icon" aria-hidden="true">🍄 </div><div><h3>Чага берёзовая</h3><span class="smallprint">Растительное сырьё</span></div></div><p>Знакомьтесь с информацией о продукте на Ozon.</p><a class="btn btn-primary" href="https://ozon.ru/t/7GnkLVI" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
-        <article class="product"><div class="product-top"><div class="plant-icon" aria-hidden="true">🌱 </div><div><h3>Расторопша</h3><span class="smallprint">Семена</span></div></div><p>Подробности о продукте, упаковке и составе — в карточке товара.</p><a class="btn btn-primary" href="https://ozon.ru/t/Crm8JIS" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
+        <article class="product" id="product-nettle"><div class="product-top"><div class="plant-icon" aria-hidden="true">🌿 </div><div><h3>Крапива</h3><span class="smallprint">Растительное сырьё</span></div></div><p>Информация о продукте, составе и особенностях хранения.</p><a class="btn btn-primary" href="https://ozon.ru/t/hi4CmtY" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
+        <article class="product" id="product-troychatka"><div class="product-top"><div class="plant-icon" aria-hidden="true">🌼 </div><div><h3>Тройчатка</h3><span class="smallprint">Растительный сбор</span></div></div><p>Описание продукта и сведения, указанные продавцом.</p><a class="btn btn-primary" href="https://ozon.ru/t/EIrjkJM" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
+<article class="product" id="product-aspen"><div class="product-top"><div class="plant-icon" aria-hidden="true">🌳 </div><div><h3>Кора осины молотая</h3><span class="smallprint">Растительное сырьё</span></div></div><p>Узнайте подробности о продукте на странице товара.</p><a class="btn btn-primary" href="https://ozon.ru/t/D4Zgx9P" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
+        <article class="product" id="product-tansy"><div class="product-top"><div class="plant-icon" aria-hidden="true">🌻 </div><div><h3>Пижма</h3><span class="smallprint">Растительное сырьё</span></div></div><p>Информация о продукте и рекомендации по хранению.</p><a class="btn btn-primary" href="https://ozon.ru/t/hi4CKJ6" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
+        <article class="product" id="product-chaga"><div class="product-top"><div class="plant-icon" aria-hidden="true">🍄 </div><div><h3>Чага берёзовая</h3><span class="smallprint">Растительное сырьё</span></div></div><p>Знакомьтесь с информацией о продукте на Ozon.</p><a class="btn btn-primary" href="https://ozon.ru/t/7GnkLVI" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
+        <article class="product" id="product-milk-thistle"><div class="product-top"><div class="plant-icon" aria-hidden="true">🌱 </div><div><h3>Расторопша</h3><span class="smallprint">Семена</span></div></div><p>Подробности о продукте, упаковке и составе — в карточке товара.</p><a class="btn btn-primary" href="https://ozon.ru/t/Crm8JIS" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
       </div>
     </div>
   </section>
@@ -320,6 +384,18 @@
 
 <script>
   document.getElementById('year').textContent=new Date().getFullYear();
+  const siteHeader=document.querySelector('header');
+  const updateHeader=()=>siteHeader.classList.toggle('is-scrolled',window.scrollY>24);
+  updateHeader();
+  window.addEventListener('scroll',updateHeader,{passive:true});
+  const revealItems=document.querySelectorAll('.section-head,.product,.about-panel,.note-panel,.article,.article-content,.market-box');
+  if('IntersectionObserver' in window){
+    const revealObserver=new IntersectionObserver((entries,observer)=>{
+      entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -35px 0px'});
+    revealItems.forEach(item=>{item.classList.add('reveal');revealObserver.observe(item);});
+  }else{revealItems.forEach(item=>item.classList.add('is-visible'));}
+  document.querySelectorAll('.dropdown-panel a').forEach(link=>link.addEventListener('click',()=>link.closest('details').open=false));
 </script>
 </body>
 </html>
