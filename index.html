@@ -235,6 +235,41 @@
 
     .article-content .chaga-hero-image{display:block;width:100%;height:auto;max-height:520px;object-fit:cover;border-radius:18px;margin:22px 0 24px;box-shadow:0 14px 34px rgba(24,57,45,.10)}
     @media(max-width:600px){.article-content .chaga-hero-image{border-radius:14px;margin:18px 0 20px;max-height:360px}}
+
+    /* Имиджевое оформление библиотеки материалов */
+    #articles.materials-showcase{padding:clamp(66px,8vw,108px) 0;background:#f0efe6;position:relative;overflow:hidden}
+    #articles.materials-showcase:before{content:"";position:absolute;width:520px;height:520px;border:1px solid rgba(49,83,60,.08);border-radius:50%;right:-260px;top:-230px;box-shadow:0 0 0 38px rgba(49,83,60,.025),0 0 0 76px rgba(49,83,60,.02);pointer-events:none}
+    .materials-heading{display:grid;grid-template-columns:1.1fr .7fr;gap:50px;align-items:end;margin-bottom:38px;position:relative}
+    .materials-kicker{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#71866c}
+    .materials-heading h2{font-size:clamp(34px,5vw,60px);line-height:1.06;letter-spacing:-.045em;color:#193b2e;margin:16px 0 0}
+    .materials-heading h2 em{font-family:Georgia,serif;font-weight:400;color:#788d70}
+    .materials-heading>p{max-width:390px;margin:0 0 5px;color:#69776b;font-size:15px;line-height:1.85}
+    .materials-grid{display:grid;grid-template-columns:1.18fr .91fr .91fr;gap:18px;position:relative}
+    #articles .material-card{padding:0;overflow:hidden;border:1px solid #dce1d5;border-radius:22px;background:#fbfaf5;min-height:390px;display:flex;flex-direction:column;box-shadow:0 12px 34px rgba(34,57,39,.045);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+    #articles .material-card:hover{transform:translateY(-5px);box-shadow:0 20px 42px rgba(34,57,39,.10);border-color:#bdcbb8}
+    #articles .material-featured{background:#173d2f;border-color:#173d2f;color:#fbf8ed}
+    .material-photo{height:174px;overflow:hidden;background:#dce4d6}
+    .material-photo img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .45s ease}
+    .material-featured:hover .material-photo img{transform:scale(1.045)}
+    .material-card-body{padding:25px;display:flex;flex-direction:column;align-items:flex-start;flex:1}
+    .material-meta{display:flex;gap:10px;align-items:center;font-size:9px;font-weight:800;letter-spacing:.15em;color:#819477}
+    .material-featured .material-meta{color:#c2d0b8}
+    .material-dot{font-size:7px;opacity:.7}
+    #articles .material-card h3{font-size:clamp(19px,2vw,23px);line-height:1.25;letter-spacing:-.025em;margin:15px 0 10px;color:#203b2e}
+    #articles .material-featured h3{color:#fffaf0}
+    #articles .material-card p{font-size:13px;line-height:1.75;color:#718074;margin:0 0 22px}
+    #articles .material-featured p{color:#d0d9cb}
+    #articles .material-card a{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid #e2e5dc;width:100%;font-size:12px;font-weight:800;letter-spacing:.02em;color:#315d43;text-decoration:none}
+    #articles .material-featured a{border-color:rgba(235,242,226,.2);color:#edf2e7}
+    #articles .material-card a span{font-size:17px;transition:transform .2s ease}
+    #articles .material-card a:hover span{transform:translate(3px,-3px)}
+    .material-card-top{height:174px;padding:25px;display:flex;justify-content:space-between;align-items:flex-start;background:linear-gradient(145deg,#e3e8d9,#cbd8c7);color:#31563e}
+    .material-card:nth-child(3) .material-card-top{background:linear-gradient(145deg,#e8e4d7,#d6d5c3)}
+    .material-number{font-family:Georgia,serif;font-size:56px;line-height:1;color:rgba(39,75,51,.62)}
+    .material-symbol{font-size:38px;opacity:.55}
+    .materials-foot{display:flex;justify-content:space-between;gap:16px;margin-top:27px;padding-top:15px;border-top:1px solid #d9dfd3;color:#8a9787;font-size:9px;font-weight:800;letter-spacing:.17em}
+    @media(max-width:850px){.materials-grid{grid-template-columns:1fr 1fr}.materials-featured{grid-column:1/-1}.materials-heading{gap:25px}}
+    @media(max-width:600px){#articles.materials-showcase{padding:58px 0}.materials-heading{grid-template-columns:1fr;gap:14px;margin-bottom:26px}.materials-heading>p{font-size:14px}.materials-grid{grid-template-columns:1fr;gap:13px}#articles .material-card{min-height:0}.material-photo,.material-card-top{height:155px}.material-card-body{padding:22px}.materials-foot{font-size:8px;letter-spacing:.1em}}
 </style>
 </head>
 <body>
@@ -393,31 +428,45 @@
   </section>
 
 
-  <section id="articles">
+  <section id="articles" class="materials-showcase">
     <div class="wrap">
-      <div class="section-head">
-        <div><h2>Полезные материалы</h2><p class="sub">Информационный раздел о растениях и бережном обращении с сырьём.</p></div>
+      <div class="materials-heading">
+        <div>
+          <span class="materials-kicker">Библиотека «Алтайского уезда»</span>
+          <h2>Знание помогает<br><em>выбирать осознанно</em></h2>
+        </div>
+        <p>Полезные материалы о растениях, традициях и бережном обращении с природным сырьём. Просто, внимательно и по существу.</p>
       </div>
-      <div class="articles">
-        <article class="article">
-          <span class="tag">Чага</span>
-          <h3>Берёзовая чага: свойства, состав и традиции применения</h3>
-          <p>Что представляет собой берёзовая чага, какие природные соединения входят в её состав и как её традиционно использовали.</p>
-          <a href="#chaga-article">Читать статью →</a>
-</article>
-        <article class="article">
-          <span class="tag">Хранение</span>
-          <h3>Как хранить растительное сырьё</h3>
-          <p>Общие принципы: сухое место, защита от прямого солнца и соблюдение условий, указанных на упаковке.</p>
-          <a href="#contacts">Предложить тему ↗</a>
+      <div class="articles materials-grid">
+        <article class="article material-card material-featured">
+          <div class="material-photo"><img src="assets/IMG_9293.jpg" alt="Берёзовая чага крупным планом" loading="lazy"></div>
+          <div class="material-card-body">
+            <div class="material-meta"><span>01 / РАСТЕНИЯ</span><span class="material-dot">●</span><span>ЧАГА</span></div>
+            <h3>Берёзовая чага: свойства, состав и традиции применения</h3>
+            <p>Что представляет собой берёзовая чага, какие природные соединения входят в её состав и как её традиционно использовали.</p>
+            <a href="#chaga-article">Читать статью <span>↗</span></a>
+          </div>
         </article>
-        <article class="article">
-          <span class="tag">Выбор</span>
-          <h3>На что смотреть при выборе продукта</h3>
-          <p>Проверьте состав, массу упаковки, сведения о производителе или продавце и срок годности.</p>
-          <a href="#catalog">Посмотреть ассортимент ↗</a>
+        <article class="article material-card">
+          <div class="material-card-top"><span class="material-number">02</span><span class="material-symbol">⌁</span></div>
+          <div class="material-card-body">
+            <div class="material-meta"><span>ПРАКТИЧЕСКИЙ ГИД</span></div>
+            <h3>Как хранить растительное сырьё</h3>
+            <p>Сухое место, защита от прямого солнца и соблюдение условий, указанных на упаковке.</p>
+            <a href="#contacts">Предложить тему <span>↗</span></a>
+          </div>
+        </article>
+        <article class="article material-card">
+          <div class="material-card-top"><span class="material-number">03</span><span class="material-symbol">✳</span></div>
+          <div class="material-card-body">
+            <div class="material-meta"><span>ПОЛЕЗНЫЕ СОВЕТЫ</span></div>
+            <h3>На что смотреть при выборе продукта</h3>
+            <p>Состав, масса упаковки, сведения о производителе или продавце и срок годности — важные детали выбора.</p>
+            <a href="#catalog">Посмотреть ассортимент <span>↗</span></a>
+          </div>
         </article>
       </div>
+      <div class="materials-foot"><span>АЛТАЙСКИЙ УЕЗД</span><span>ПРИРОДА · ЗНАНИЯ · ТРАДИЦИИ</span></div>
     </div>
   </section>
 
