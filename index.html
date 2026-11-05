@@ -200,6 +200,9 @@
     .gallery-thumb img{display:block;width:100%;height:100%;object-fit:cover}
     .gallery-thumb:hover,.gallery-thumb:focus-visible,.gallery-thumb.is-active{border-color:var(--green,#315b3e);outline:none}
     @media(max-width:760px){.products{grid-template-columns:1fr}.product-with-gallery .gallery-main{aspect-ratio:1/1}.gallery-thumbs{gap:8px}.gallery-thumb{border-radius:9px}}
+
+/* Premium brand film section */
+#brand-film{background:#f3f1e8;padding:82px 0}.brand-film-grid{display:grid;grid-template-columns:1.08fr .72fr;gap:clamp(34px,6vw,86px);align-items:center}.brand-film-copy{max-width:560px}.brand-film-kicker{display:inline-flex;align-items:center;gap:11px;color:#71816e;font-size:11px;font-weight:750;letter-spacing:.19em;text-transform:uppercase}.brand-film-kicker:before{content:"";width:30px;height:1px;background:#9aa98f}.brand-film-copy h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(36px,4.3vw,56px);line-height:1.08;letter-spacing:-.035em;color:#18392d;margin:23px 0 22px}.brand-film-copy p{max-width:480px;color:#718078;font-size:15px;line-height:1.9;margin:0 0 15px}.brand-film-signature{display:flex;align-items:center;gap:13px;margin-top:31px;color:#315f45;font-family:Georgia,"Times New Roman",serif;font-size:16px;font-style:italic}.brand-film-signature:before{content:"";width:35px;height:1px;background:#a9b79f}.brand-film-frame{position:relative;width:100%;max-width:390px;justify-self:end;aspect-ratio:9/14.7;border-radius:190px 190px 22px 22px;overflow:hidden;background:linear-gradient(155deg,#dce4d6 0%,#b7c8b5 48%,#718a75 100%);box-shadow:0 28px 65px rgba(24,57,45,.17);border:7px solid rgba(255,255,255,.72)}.brand-film-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:17px;color:#fff;text-align:center;padding:25px;background:linear-gradient(180deg,rgba(13,43,31,.05),rgba(13,43,31,.28))}.brand-film-play{width:68px;height:68px;border:1px solid rgba(255,255,255,.8);border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12);font-size:22px;padding-left:4px}.brand-film-placeholder strong{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:25px;line-height:1.2}.brand-film-placeholder small{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.9)}@media(max-width:760px){#brand-film{padding:58px 0}.brand-film-grid{grid-template-columns:1fr;gap:34px}.brand-film-copy h2{font-size:clamp(34px,9vw,46px)}.brand-film-frame{justify-self:center;width:min(78%,360px);aspect-ratio:9/14}}
   </style>
 </head>
 <body>
@@ -266,6 +269,21 @@
     </div>
   </section>
 
+
+  <section id="brand-film" aria-labelledby="brand-film-title">
+    <div class="wrap brand-film-grid">
+      <div class="brand-film-copy">
+        <span class="brand-film-kicker">Философия бренда</span>
+        <h2 id="brand-film-title">Ближе к природе — ближе к традициям</h2>
+        <p>«Алтайский уезд» вдохновлён красотой Алтая, богатством его природы и наследием поколений. Мы ценим естественность, бережное отношение к природным дарам и внимание к каждой детали.</p>
+        <p>Для нас это не просто место на карте. Это особое чувство связи с родным краем, уважение к традициям и стремление сохранять лучшее, что дарит нам природа.</p>
+        <div class="brand-film-signature">С теплом и уважением к природе Алтая</div>
+      </div>
+      <div class="brand-film-frame" aria-label="Место для видеоролика о бренде">
+        <div class="brand-film-placeholder"><span class="brand-film-play" aria-hidden="true">▶</span><strong>История<br>Алтайского уезда</strong><small>Здесь будет ваше видео</small></div>
+      </div>
+    </div>
+  </section>
 
   <section id="catalog">
     <div class="wrap">
