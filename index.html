@@ -14,29 +14,29 @@
     a{color:inherit}
     button,a{-webkit-tap-highlight-color:transparent}
     .wrap{width:min(1160px,calc(100% - 40px));margin:auto}
-    header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    header{position:absolute;top:0;left:0;width:100%;z-index:5;background:linear-gradient(180deg,rgba(4,34,27,.38),transparent);border-bottom:0}
     .nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
     .brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:220px}
     .brand img{width:56px;height:56px;object-fit:contain;border-radius:50%}
-    .brand strong{display:block;font-size:17px;letter-spacing:.01em}
-    .brand small{display:block;color:var(--muted);font-size:11px}
+    .brand strong{display:block;font-size:17px;letter-spacing:.01em;color:#fff;text-shadow:0 1px 8px #102b2580}
+    .brand small{display:block;color:#f2f7ef;font-size:11px;text-shadow:0 1px 8px #102b2580}
     nav{display:flex;gap:25px;align-items:center}
-    nav a{text-decoration:none;font-size:13px;color:#40544a}
-    nav a:hover{color:var(--green)}
+    nav a{text-decoration:none;font-size:13px;color:#fff;font-weight:650;text-shadow:0 1px 8px #102b2580}
+    nav a:hover{color:#e4f2d7}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:650;font-size:13px;border:1px solid transparent;transition:.2s}
     .btn-primary{background:var(--green);color:white}
     .btn-primary:hover{background:var(--green-dark);transform:translateY(-1px)}
-    .btn-outline{border-color:#a8bba2;background:#fff;color:var(--green-dark)}
-    .btn-outline:hover{background:var(--pale)}
-    .hero{position:relative;background:linear-gradient(90deg,rgba(247,248,243,.96) 0%,rgba(247,248,243,.84) 34%,rgba(247,248,243,.12) 72%),url("hero-altai.jpg") center/cover no-repeat;overflow:hidden}
-    .hero-grid{display:grid;grid-template-columns:1fr;gap:0;align-items:center;min-height:540px;padding:58px 0}
-    .hero-grid>div:first-child{position:relative;z-index:1}
-    .hero h1{max-width:570px;font-size:clamp(40px,5vw,66px)}
-    .hero .lead{font-size:17px;line-height:1.75;max-width:490px}
+    .btn-outline{border-color:rgba(255,255,255,.85);background:rgba(255,255,255,.08);color:#fff;backdrop-filter:blur(5px)}
+    .btn-outline:hover{background:rgba(255,255,255,.2)}
+    .hero{position:relative;display:flex;align-items:center;min-height:100vh;min-height:100svh;padding:0;background:linear-gradient(90deg,rgba(4,30,22,.60) 0%,rgba(4,30,22,.32) 43%,rgba(4,30,22,.03) 78%),linear-gradient(0deg,rgba(4,30,22,.16),transparent 42%),url("hero-altai.jpg") center center/cover no-repeat;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1fr;gap:0;align-items:center;min-height:100vh;min-height:100svh;padding:132px 0 70px}
+    .hero-grid>div:first-child{position:relative;z-index:1;max-width:680px}
+    .hero h1{max-width:680px;font-size:clamp(44px,6vw,76px);color:#fff;text-shadow:0 3px 22px rgba(0,0,0,.26);line-height:1.04}
+    .hero .lead{font-size:clamp(16px,1.4vw,19px);line-height:1.65;max-width:610px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.5)}
     .hero-art{display:none}
     .hero-art img{width:100%;height:390px;max-height:none;object-fit:cover;border-radius:28px;mix-blend-mode:normal;filter:drop-shadow(0 22px 32px #243d3220)}
     .hero-note{right:18px;bottom:18px;max-width:215px;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border:1px solid #ffffffb8;border-radius:17px;padding:16px 19px;box-shadow:0 14px 35px #243d3218}
-    .eyebrow{background:#e5eddd;color:#426543}
+    .eyebrow{background:#e5eddd;color:#24512d}
     .eyebrow{display:inline-block;background:#e9efe2;color:#4d6c4b;border-radius:99px;padding:6px 12px;font-size:12px;font-weight:650;letter-spacing:.02em}
     h1{font-size:clamp(36px,4.5vw,58px);line-height:1.07;letter-spacing:-.04em;margin:18px 0 18px;max-width:650px}
     h2{font-size:clamp(25px,3vw,34px);line-height:1.15;letter-spacing:-.025em;margin:0 0 8px}
@@ -99,10 +99,8 @@
     @media(max-width:850px){
       nav{gap:13px}
       .nav .btn{display:none}
-      .hero-grid{grid-template-columns:1fr;gap:22px;padding:45px 0 34px}
-      .hero-art{min-height:260px}
-      .hero-art img{width:100%;height:260px;max-height:none}
-      .hero-note{right:4%;bottom:12px}
+      .hero-grid{grid-template-columns:1fr;gap:0;padding:118px 0 48px;min-height:100svh}
+      .hero{background-position:center center}
       .products{grid-template-columns:repeat(2,1fr)}
       .about-grid{grid-template-columns:1fr}
       .articles{grid-template-columns:1fr 1fr}
@@ -116,10 +114,9 @@
       .brand small{font-size:10px}
       nav{display:none}
 .mobile-menu{display:inline-flex;border:1px solid var(--line);background:white;border-radius:10px;padding:9px 11px;color:var(--ink)}
-      .hero-grid{padding:38px 0 28px}
-      .hero-art{min-height:205px}
-      .hero-art img{width:100%;height:205px}
-      .hero-note{font-size:11px;max-width:155px;padding:10px 12px}
+      .hero-grid{padding:112px 0 42px;min-height:100svh}
+      .hero{background-position:58% center}
+      .hero h1{font-size:clamp(40px,11vw,54px)}
       section{padding:48px 0}
       .section-head{align-items:start;flex-direction:column}
       .products{grid-template-columns:1fr}
@@ -170,10 +167,6 @@
           <a class="btn btn-primary" href="#catalog">Смотреть каталог <span>→</span></a>
           <a class="btn btn-outline" href="#marketplaces">Где купить?</a>
         </div>
-      </div>
-      <div class="hero-art">
-        <img src="assets/hero-altai.svg" alt="Солнечный зелёный луг и горы Алтая">
-        <div class="hero-note"><b>Ближе к природе</b>Знакомство с растительными продуктами и традициями Алтая.</div>
       </div>
     </div>
   </section>
