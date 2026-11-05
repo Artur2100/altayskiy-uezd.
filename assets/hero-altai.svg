@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" role="img" aria-labelledby="title desc">
+<title id="title">Солнечный пейзаж Алтая</title><desc id="desc">Зелёные луга, горы и солнечное небо</desc>
+<defs>
+ <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#d9ead0"/><stop offset="1" stop-color="#f8f5df"/></linearGradient>
+ <linearGradient id="meadow" x2="0" y2="1"><stop stop-color="#91b875"/><stop offset="1" stop-color="#426b45"/></linearGradient>
+ <linearGradient id="mount" x2="0" y2="1"><stop stop-color="#9db6a0"/><stop offset="1" stop-color="#52765d"/></linearGradient>
+ <filter id="blur"><feGaussianBlur stdDeviation="24"/></filter>
+</defs>
+<rect width="900" height="650" rx="34" fill="url(#sky)"/>
+<circle cx="690" cy="135" r="62" fill="#fff2b8"/>
+<circle cx="690" cy="135" r="88" fill="#fff2b8" opacity=".35" filter="url(#blur)"/>
+<path d="M0 360 150 190 255 305 405 112 555 300 690 175 900 365V650H0Z" fill="#b8c9b0"/>
+<path d="m0 390 175-175 100 122 140-168 145 184 130-130 210 180v267H0Z" fill="url(#mount)"/>
+<path d="m315 260 100-91 92 117-75-39-25 20-30-25Z" fill="#edf0df" opacity=".92"/>
+<path d="m625 280 65-65 85 93-70-31-25 15Z" fill="#edf0df" opacity=".85"/>
+<path d="M0 405q175-75 350 0t550-6v251H0Z" fill="#8caf70"/>
+<path d="M0 470q190-100 390-8t510-5v193H0Z" fill="url(#meadow)"/>
+<path d="M0 555q220-80 430-12t470-25v132H0Z" fill="#365e3d" opacity=".48"/>
+<g fill="#dce8a6" opacity=".9"><circle cx="115" cy="490" r="5"/><circle cx="160" cy="530" r="4"/><circle cx="250" cy="475" r="5"/><circle cx="710" cy="510" r="5"/><circle cx="780" cy="470" r="4"/><circle cx="580" cy="555" r="5"/></g>
+<g stroke="#d9e6b4" stroke-width="3" stroke-linecap="round" opacity=".8"><path d="M90 650q-8-60 8-92m-8 92q15-48 35-60M180 650q-5-45-20-68m20 68q15-42 30-50M760 650q-4-55 12-80m-12 80q16-42 35-55"/></g>
+<g fill="#fff" opacity=".38"><ellipse cx="185" cy="115" rx="74" ry="18"/><ellipse cx="230" cy="110" rx="48" ry="24"/><ellipse cx="120" cy="120" rx="40" ry="16"/></g>
+</svg>
