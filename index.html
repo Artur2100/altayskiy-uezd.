@@ -190,6 +190,16 @@
     @media(max-width:600px){header{background:rgba(13,42,31,.95)}.nav{height:70px}.mobile-menu{border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff}#mobile-nav{background:#123729;border:1px solid rgba(255,255,255,.12);border-radius:0 0 16px 16px;padding:12px 14px!important}#mobile-nav a{color:#f5f4eb;text-decoration:none;padding:7px 9px}.hero-grid{padding-top:120px}.product{padding:21px}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
 
+
+    .product-with-gallery{min-height:0}
+    .product-gallery{width:100%;margin:0 0 18px}
+    .gallery-main{width:100%;aspect-ratio:1/1.08;border-radius:14px;overflow:hidden;background:#f3f5ef}
+    .gallery-main img{width:100%;height:100%;display:block;object-fit:contain;transition:opacity .18s ease}
+    .gallery-thumbs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;margin-top:8px}
+    .gallery-thumb{padding:0;border:2px solid transparent;border-radius:8px;overflow:hidden;background:#f2f4ef;aspect-ratio:1;cursor:pointer;min-width:0}
+    .gallery-thumb img{display:block;width:100%;height:100%;object-fit:cover}
+    .gallery-thumb:hover,.gallery-thumb:focus-visible,.gallery-thumb.is-active{border-color:var(--green,#315b3e);outline:none}
+    @media(max-width:760px){.products{grid-template-columns:1fr}.product-with-gallery .gallery-main{aspect-ratio:1/1}.gallery-thumbs{gap:8px}.gallery-thumb{border-radius:9px}}
   </style>
 </head>
 <body>
@@ -242,7 +252,19 @@
         <span class="smallprint">6 продуктов в каталоге</span>
       </div>
       <div class="products">
-        <article class="product" id="product-nettle"><div class="product-top"><div class="plant-icon" aria-hidden="true">🌿 </div><div><h3>Крапива</h3><span class="smallprint">Растительное сырьё</span></div></div><p>Информация о продукте, составе и особенностях хранения.</p><a class="btn btn-primary" href="https://ozon.ru/t/hi4CmtY" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
+        <article class="product product-with-gallery" id="product-nettle">
+          <div class="product-gallery" data-gallery>
+            <div class="gallery-main"><img src="assets/IMG_9272.jpg" alt="Крапива натуральная — упаковка 50 граммов" data-gallery-main></div>
+            <div class="gallery-thumbs" aria-label="Фотографии крапивы">
+              <button class="gallery-thumb is-active" type="button" data-image="assets/IMG_9272.jpg" data-alt="Крапива натуральная — упаковка 50 граммов" aria-label="Главное фото крапивы"><img src="assets/IMG_9272.jpg" alt=""></button>
+              <button class="gallery-thumb" type="button" data-image="assets/IMG_9273.jpg" data-alt="Целебные свойства крапивы" aria-label="Свойства крапивы"><img src="assets/IMG_9273.jpg" alt=""></button>
+              <button class="gallery-thumb" type="button" data-image="assets/IMG_9274.jpg" data-alt="Показания к применению крапивы" aria-label="Применение крапивы"><img src="assets/IMG_9274.jpg" alt=""></button>
+              <button class="gallery-thumb" type="button" data-image="assets/IMG_9275.jpg" data-alt="Витамины и состав крапивы" aria-label="Состав крапивы"><img src="assets/IMG_9275.jpg" alt=""></button>
+              <button class="gallery-thumb" type="button" data-image="assets/IMG_9276.jpg" data-alt="Способ заваривания крапивы" aria-label="Как заваривать крапиву"><img src="assets/IMG_9276.jpg" alt=""></button>
+              <button class="gallery-thumb" type="button" data-image="assets/IMG_9277.jpg" data-alt="Брендовый слайд Алтайский уезд" aria-label="О бренде Алтайский уезд"><img src="assets/IMG_9277.jpg" alt=""></button>
+            </div>
+          </div>
+          <div class="product-top"><div class="plant-icon" aria-hidden="true">🌿 </div><div><h3>Крапива</h3><span class="smallprint">Растительное сырьё</span></div></div><div class="product-top"><div class="plant-icon" aria-hidden="true">🌿 </div><div><h3>Крапива</h3><span class="smallprint">Растительное сырьё</span></div></div><p>Информация о продукте, составе и особенностях хранения.</p><a class="btn btn-primary" href="https://ozon.ru/t/hi4CmtY" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
         <article class="product" id="product-troychatka"><div class="product-top"><div class="plant-icon" aria-hidden="true">🌼 </div><div><h3>Тройчатка</h3><span class="smallprint">Растительный сбор</span></div></div><p>Описание продукта и сведения, указанные продавцом.</p><a class="btn btn-primary" href="https://ozon.ru/t/EIrjkJM" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
 <article class="product" id="product-aspen"><div class="product-top"><div class="plant-icon" aria-hidden="true">🌳 </div><div><h3>Кора осины молотая</h3><span class="smallprint">Растительное сырьё</span></div></div><p>Узнайте подробности о продукте на странице товара.</p><a class="btn btn-primary" href="https://ozon.ru/t/D4Zgx9P" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
         <article class="product" id="product-tansy"><div class="product-top"><div class="plant-icon" aria-hidden="true">🌻 </div><div><h3>Пижма</h3><span class="smallprint">Растительное сырьё</span></div></div><p>Информация о продукте и рекомендации по хранению.</p><a class="btn btn-primary" href="https://ozon.ru/t/hi4CKJ6" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
@@ -383,6 +405,20 @@
 </footer>
 
 <script>
+  document.querySelectorAll('[data-gallery]').forEach(gallery=>{
+    const main=gallery.querySelector('[data-gallery-main]');
+    const thumbs=gallery.querySelectorAll('.gallery-thumb');
+    const selectImage=button=>{
+      main.src=button.dataset.image;
+      main.alt=button.dataset.alt||'Фотография товара';
+      thumbs.forEach(item=>item.classList.toggle('is-active',item===button));
+    };
+    thumbs.forEach(button=>{
+      button.addEventListener('mouseenter',()=>selectImage(button));
+      button.addEventListener('focus',()=>selectImage(button));
+      button.addEventListener('click',()=>selectImage(button));
+    });
+  });
   document.getElementById('year').textContent=new Date().getFullYear();
   const siteHeader=document.querySelector('header');
   const updateHeader=()=>siteHeader.classList.toggle('is-scrolled',window.scrollY>24);
