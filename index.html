@@ -274,7 +274,37 @@
     .article-content .article-hero-image{display:block;width:100%;height:auto;max-height:500px;object-fit:cover;border-radius:18px;margin:22px 0 28px;box-shadow:0 14px 34px rgba(24,57,45,.10)}
     @media(max-width:600px){.article-content .article-hero-image{border-radius:14px;margin:18px 0 22px;max-height:340px}}
 
-</style>
+
+    /* Путеводитель по растениям */
+    #plant-guide{background:#f7f6ef;padding:clamp(58px,7vw,92px) 0}
+    .plant-guide-heading{display:grid;grid-template-columns:1fr .8fr;gap:35px;align-items:end;margin-bottom:34px}
+    .plant-guide-kicker{color:#7d8c73;font-size:11px;font-weight:800;letter-spacing:.19em;text-transform:uppercase}
+    .plant-guide-heading h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(36px,5vw,58px);font-weight:400;line-height:1.05;letter-spacing:-.04em;color:#18392d;margin:15px 0 0}
+    .plant-guide-heading h2 em{color:#71866c;font-weight:400}
+    .plant-guide-heading>p{max-width:470px;color:#718078;font-size:15px;line-height:1.85;margin:0 0 4px}
+    .plant-guide-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .plant-guide-card{display:flex;flex-direction:column;min-width:0;overflow:hidden;text-decoration:none;background:#fffdf8;border:1px solid #e1e5d9;border-radius:19px;box-shadow:0 8px 24px rgba(24,57,45,.045);transition:transform .35s,box-shadow .35s,border-color .35s}
+    .plant-guide-card:hover{transform:translateY(-5px);box-shadow:0 17px 34px rgba(24,57,45,.11);border-color:#b8c8ae}
+    .plant-guide-image{height:205px;position:relative;overflow:hidden;background:#e4e9dc}
+    .plant-guide-image img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .55s}
+    .plant-guide-card:hover .plant-guide-image img{transform:scale(1.045)}
+    .plant-guide-image>span:last-child{position:absolute;top:15px;left:15px;padding:7px 11px;border-radius:9px;background:rgba(250,250,244,.9);color:#31563e;font:22px Georgia,serif;backdrop-filter:blur(8px)}
+    .plant-guide-copy{padding:20px 21px 22px;display:flex;flex-direction:column;flex:1}
+    .plant-guide-type{font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:#829078}
+    .plant-guide-copy h3{font:400 25px Georgia,"Times New Roman",serif;color:#18392d;margin:8px 0}
+    .plant-guide-copy p{font-size:13px;line-height:1.65;color:#758178;margin:0 0 18px;min-height:43px}
+    .plant-guide-copy b{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:13px;border-top:1px solid #e8ebe3;color:#315f45;font-size:12px}
+    .plant-guide-copy b span{font-size:17px;transition:transform .25s}
+    .plant-guide-card:hover .plant-guide-copy b span{transform:translate(3px,-3px)}
+    .plant-guide-illustration{display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,#f7f3df 0,#e2e8d8 65%,#d3dfd0 100%)}
+    .plant-guide-illustration .plant-guide-plant{font-size:100px;color:#66815e;text-shadow:0 8px 24px rgba(49,86,62,.12)}
+    .plant-guide-illustration.tansy .plant-guide-plant{color:#b79c42}
+    .plant-guide-illustration.thistle .plant-guide-plant{color:#718a75}
+    .plant-guide-note{margin:22px 0 0;color:#8b958a;font-size:11px}
+    @media(max-width:850px){.plant-guide-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.plant-guide-heading{grid-template-columns:1fr .9fr}}
+    @media(max-width:600px){#plant-guide{padding:54px 0}.plant-guide-heading{grid-template-columns:1fr;gap:15px;margin-bottom:24px}.plant-guide-heading>p{font-size:14px}.plant-guide-grid{grid-template-columns:1fr;gap:13px}.plant-guide-image{height:190px}.plant-guide-copy{padding:18px}.plant-guide-copy p{min-height:0}}
+
+  </style>
 </head>
 <body>
 <header>
@@ -431,6 +461,46 @@
     </div>
   </section>
 
+
+
+  <section id="plant-guide" class="plant-guide" aria-labelledby="plant-guide-title">
+    <div class="wrap">
+      <div class="plant-guide-heading">
+        <div>
+          <span class="plant-guide-kicker">Ботаническая библиотека</span>
+          <h2 id="plant-guide-title">Путеводитель<br><em>по растениям</em></h2>
+        </div>
+        <p>Познакомьтесь с растениями и природным сырьём, которые входят в ассортимент «Алтайского уезда». Коротко о каждом — с возможностью перейти к подробной информации о продукте.</p>
+      </div>
+      <div class="plant-guide-grid">
+        <a class="plant-guide-card" href="#product-nettle">
+          <div class="plant-guide-image"><img src="assets/IMG_9272.jpg" alt="Крапива — растительное сырьё" loading="lazy"><span>01</span></div>
+          <div class="plant-guide-copy"><span class="plant-guide-type">Листья</span><h3>Крапива</h3><p>Знакомство с растением, его особенностями и формой сырья.</p><b>К продукту <span>↗</span></b></div>
+        </a>
+        <a class="plant-guide-card" href="#product-troychatka">
+          <div class="plant-guide-image"><img src="assets/01-troichatka-main.jpg" alt="Травяная смесь Тройчатка" loading="lazy"><span>02</span></div>
+          <div class="plant-guide-copy"><span class="plant-guide-type">Травяная смесь</span><h3>Тройчатка</h3><p>Состав смеси и информация о её компонентах.</p><b>К продукту <span>↗</span></b></div>
+        </a>
+        <a class="plant-guide-card" href="#product-aspen">
+          <div class="plant-guide-image"><img src="assets/IMG_9286.jpg" alt="Кора осины молотая" loading="lazy"><span>03</span></div>
+          <div class="plant-guide-copy"><span class="plant-guide-type">Кора</span><h3>Кора осины</h3><p>Особенности растительного сырья и степень измельчения.</p><b>К продукту <span>↗</span></b></div>
+        </a>
+        <a class="plant-guide-card" href="#product-tansy">
+          <div class="plant-guide-image plant-guide-illustration tansy"><span class="plant-guide-plant" aria-hidden="true">✳</span><span>04</span></div>
+          <div class="plant-guide-copy"><span class="plant-guide-type">Цветки и соцветия</span><h3>Пижма</h3><p>Краткое знакомство с растением и его ботаническими особенностями.</p><b>К продукту <span>↗</span></b></div>
+        </a>
+        <a class="plant-guide-card" href="#product-chaga">
+          <div class="plant-guide-image"><img src="assets/IMG_9293.jpg" alt="Берёзовая чага" loading="lazy"><span>05</span></div>
+          <div class="plant-guide-copy"><span class="plant-guide-type">Грибное сырьё</span><h3>Чага берёзовая</h3><p>Происхождение, внешний вид и традиции знакомства с чагой.</p><b>К продукту <span>↗</span></b></div>
+        </a>
+        <a class="plant-guide-card" href="#product-milk-thistle">
+          <div class="plant-guide-image plant-guide-illustration thistle"><span class="plant-guide-plant" aria-hidden="true">❋</span><span>06</span></div>
+          <div class="plant-guide-copy"><span class="plant-guide-type">Семена</span><h3>Расторопша</h3><p>Знакомство с растением и особенностями семян.</p><b>К продукту <span>↗</span></b></div>
+        </a>
+      </div>
+      <p class="plant-guide-note">Материалы носят ознакомительный характер и не являются медицинскими рекомендациями.</p>
+    </div>
+  </section>
 
   <section id="articles" class="materials-showcase">
     <div class="wrap">
