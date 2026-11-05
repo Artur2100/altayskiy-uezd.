@@ -195,7 +195,7 @@
     .product-gallery{width:100%;margin:0 0 18px}
     .gallery-main{width:100%;aspect-ratio:1/1.08;border-radius:14px;overflow:hidden;background:#f3f5ef}
     .gallery-main img{width:100%;height:100%;display:block;object-fit:contain;transition:opacity .18s ease}
-    .gallery-thumbs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;margin-top:8px}
+    .gallery-thumbs{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px;margin-top:8px}
     .gallery-thumb{padding:0;border:2px solid transparent;border-radius:8px;overflow:hidden;background:#f2f4ef;aspect-ratio:1;cursor:pointer;min-width:0}
     .gallery-thumb img{display:block;width:100%;height:100%;object-fit:cover}
     .gallery-thumb:hover,.gallery-thumb:focus-visible,.gallery-thumb.is-active{border-color:var(--green,#315b3e);outline:none}
@@ -265,7 +265,25 @@
             </div>
           </div>
           <p>Информация о продукте, составе и особенностях хранения.</p><a class="btn btn-primary" href="https://ozon.ru/t/hi4CmtY" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
-        <article class="product" id="product-troychatka"><div class="product-top"><div class="plant-icon" aria-hidden="true">🌼 </div><div><h3>Тройчатка</h3><span class="smallprint">Растительный сбор</span></div></div><p>Описание продукта и сведения, указанные продавцом.</p><a class="btn btn-primary" href="https://ozon.ru/t/EIrjkJM" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
+        <article class="product product-with-gallery" id="product-troychatka">
+          <div class="product-gallery" data-gallery>
+            <div class="gallery-main"><img src="assets/01-troichatka-main.jpg" alt="Тройчатка Иванченко — упаковка продукта" data-gallery-main></div>
+            <div class="gallery-thumbs" aria-label="Фотографии Тройчатки">
+              <button class="gallery-thumb is-active" type="button" data-image="assets/01-troichatka-main.jpg" data-alt="Тройчатка Иванченко — упаковка продукта" aria-label="Тройчатка Иванченко — упаковка продукта"><img src="assets/01-troichatka-main.jpg" alt=""></button>
+              <button class="gallery-thumb" type="button" data-image="assets/02-troichatka-symptoms.jpg" data-alt="Информационный слайд о продукте" aria-label="Информационный слайд о продукте"><img src="assets/02-troichatka-symptoms.jpg" alt=""></button>
+              <button class="gallery-thumb" type="button" data-image="assets/03-troichatka-composition.jpg" data-alt="Состав сбора: пижма, гвоздика и полынь" aria-label="Состав сбора: пижма, гвоздика и полынь"><img src="assets/03-troichatka-composition.jpg" alt=""></button>
+              <button class="gallery-thumb" type="button" data-image="assets/04-troichatka-indications.jpg" data-alt="Информационный слайд о составе продукта" aria-label="Информационный слайд о составе продукта"><img src="assets/04-troichatka-indications.jpg" alt=""></button>
+              <button class="gallery-thumb" type="button" data-image="assets/05-troichatka-product-use.jpg" data-alt="Тройчатка — изображение продукта" aria-label="Тройчатка — изображение продукта"><img src="assets/05-troichatka-product-use.jpg" alt=""></button>
+              <button class="gallery-thumb" type="button" data-image="assets/06-troichatka-brewing.jpg" data-alt="Способ приготовления напитка" aria-label="Способ приготовления напитка"><img src="assets/06-troichatka-brewing.jpg" alt=""></button>
+              <button class="gallery-thumb" type="button" data-image="assets/07-troichatka-contraindications.jpg" data-alt="Информация о противопоказаниях" aria-label="Информация о противопоказаниях"><img src="assets/07-troichatka-contraindications.jpg" alt=""></button>
+              <button class="gallery-thumb" type="button" data-image="assets/08-troichatka-brand.jpg" data-alt="Бренд Алтайский уезд" aria-label="Бренд Алтайский уезд"><img src="assets/08-troichatka-brand.jpg" alt=""></button>
+            </div>
+          </div>
+          <div class="product-top"><div><h3>Тройчатка</h3><span class="smallprint">Растительный сбор</span></div></div>
+          <p>Состав и подробная информация о продукте — в карточке товара.</p>
+          <a class="btn btn-primary" href="https://ozon.ru/t/EIrjkJM" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a>
+          <div class="market-note">Ссылка ведёт на карточку товара</div>
+        </article>
 <article class="product" id="product-aspen"><div class="product-top"><div class="plant-icon" aria-hidden="true">🌳 </div><div><h3>Кора осины молотая</h3><span class="smallprint">Растительное сырьё</span></div></div><p>Узнайте подробности о продукте на странице товара.</p><a class="btn btn-primary" href="https://ozon.ru/t/D4Zgx9P" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
         <article class="product" id="product-tansy"><div class="product-top"><div class="plant-icon" aria-hidden="true">🌻 </div><div><h3>Пижма</h3><span class="smallprint">Растительное сырьё</span></div></div><p>Информация о продукте и рекомендации по хранению.</p><a class="btn btn-primary" href="https://ozon.ru/t/hi4CKJ6" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
         <article class="product" id="product-chaga"><div class="product-top"><div class="plant-icon" aria-hidden="true">🍄 </div><div><h3>Чага берёзовая</h3><span class="smallprint">Растительное сырьё</span></div></div><p>Знакомьтесь с информацией о продукте на Ozon.</p><a class="btn btn-primary" href="https://ozon.ru/t/7GnkLVI" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a><div class="market-note">Ссылка ведёт на карточку товара</div></article>
