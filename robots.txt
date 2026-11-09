@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://altayskiy-uezd.netlify.app/sitemap.xml
