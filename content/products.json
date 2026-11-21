@@ -1,0 +1,100 @@
+{
+  "items": [
+    {
+      "id": "nettle",
+      "name": "Крапива",
+      "category": "Растительное сырьё",
+      "description": "Информация о продукте, составе и особенностях хранения.",
+      "ozon": "https://ozon.ru/t/hi4CmtY",
+      "wildberries": "https://www.wildberries.ru/catalog/1902946232/detail.aspx?size=3314970274",
+      "images": [
+        "assets/IMG_9272.jpg",
+        "assets/IMG_9273.jpg",
+        "assets/IMG_9274.jpg",
+        "assets/IMG_9275.jpg",
+        "assets/IMG_9276.jpg",
+        "assets/IMG_9277.jpg"
+      ]
+    },
+    {
+      "id": "troychatka",
+      "name": "Тройчатка",
+      "category": "Растительный сбор",
+      "description": "Состав и подробная информация о продукте — в карточке товара.",
+      "ozon": "https://ozon.ru/t/EIrjkJM",
+      "wildberries": "https://www.wildberries.ru/catalog/1899518734/detail.aspx?size=3309487152",
+      "images": [
+        "assets/01-troichatka-main.jpg",
+        "assets/02-troichatka-symptoms.jpg",
+        "assets/03-troichatka-composition.jpg",
+        "assets/04-troichatka-indications.jpg",
+        "assets/05-troichatka-product-use.jpg",
+        "assets/06-troichatka-brewing.jpg",
+        "assets/07-troichatka-contraindications.jpg",
+        "assets/08-troichatka-brand.jpg"
+      ]
+    },
+    {
+      "id": "aspen",
+      "name": "Кора осины молотая",
+      "category": "Растительное сырьё",
+      "description": "Информация о продукте, составе и особенностях хранения.",
+      "ozon": "https://ozon.ru/t/D4Zgx9P",
+      "wildberries": "https://www.wildberries.ru/catalog/1908571731/detail.aspx?size=3324357033",
+      "images": [
+        "assets/IMG_9286.jpg",
+        "assets/IMG_9287.jpg",
+        "assets/IMG_9288.jpg",
+        "assets/IMG_9289.jpg",
+        "assets/IMG_9290.jpg",
+        "assets/IMG_9277.jpg"
+      ]
+    },
+    {
+      "id": "tansy",
+      "name": "Пижма",
+      "category": "Растительное сырьё",
+      "description": "Информация о продукте и рекомендации по хранению.",
+      "ozon": "https://ozon.ru/t/hi4CKJ6",
+      "wildberries": "https://www.wildberries.ru/catalog/1908340371/detail.aspx?size=3323916417",
+      "images": [
+        "assets/IMG_9312.jpg",
+        "assets/IMG_9314.jpg",
+        "assets/IMG_9316.jpg",
+        "assets/IMG_9277.jpg"
+      ]
+    },
+    {
+      "id": "chaga",
+      "name": "Чага берёзовая",
+      "category": "Растительное сырьё",
+      "description": "Знакомьтесь с информацией о продукте на Ozon.",
+      "ozon": "https://ozon.ru/t/7GnkLVI",
+      "wildberries": "https://www.wildberries.ru/catalog/1908887586/detail.aspx?size=3324922241",
+      "images": [
+        "assets/IMG_9317.jpg",
+        "assets/IMG_9318.jpg",
+        "assets/IMG_9320.jpg",
+        "assets/IMG_9321.jpg",
+        "assets/IMG_9322.jpg",
+        "assets/IMG_9277.jpg"
+      ]
+    },
+    {
+      "id": "milk-thistle",
+      "name": "Расторопша",
+      "category": "Семена",
+      "description": "Подробности о продукте, упаковке и составе — в карточке товара.",
+      "ozon": "https://ozon.ru/t/Crm8JIS",
+      "wildberries": "",
+      "images": [
+        "assets/IMG_9306.jpg",
+        "assets/IMG_9307.jpg",
+        "assets/IMG_9308.jpg",
+        "assets/IMG_9309.jpg",
+        "assets/IMG_9310.jpg",
+        "assets/IMG_9277.jpg"
+      ]
+    }
+  ]
+}
