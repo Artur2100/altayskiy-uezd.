@@ -11,6 +11,30 @@ public_folder: "/assets/uploads"
 publish_mode: simple
 
 collections:
+  - name: "products"
+    label: "Товары"
+    files:
+      - name: "catalog"
+        label: "Единая база товаров"
+        file: "content/products.json"
+        format: "json"
+        fields:
+          - label: "Список товаров"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "ID (латиницей, не менять)", name: "id", widget: "string" }
+              - { label: "Название", name: "name", widget: "string" }
+              - { label: "Категория", name: "category", widget: "string" }
+              - { label: "Описание", name: "description", widget: "text" }
+              - { label: "Ссылка на Ozon", name: "ozon", widget: "string", required: false }
+              - { label: "Ссылка на Wildberries", name: "wildberries", widget: "string", required: false }
+              - label: "Фотографии (пути к файлам)"
+                name: "images"
+                widget: "list"
+                field: { label: "Путь к изображению", name: "image", widget: "string" }
+
   - name: "articles"
     label: "Статьи"
     folder: "content/articles"
