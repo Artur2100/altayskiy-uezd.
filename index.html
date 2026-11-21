@@ -849,7 +849,8 @@
     const list=document.getElementById('product-list');
     if(!list)return;
     if(!Array.isArray(items)||!items.length){list.innerHTML='<p class="smallprint">Каталог временно недоступен. Попробуйте обновить страницу.</p>';return;}
-    const homepageItems=items.filter(product=>product.id!=='milk-thistle');
+    const homepageOrder=['troychatka','nettle','tansy','chamomile','aspen'];
+    const homepageItems=homepageOrder.map(id=>items.find(product=>product.id===id)).filter(Boolean);
     list.innerHTML=homepageItems.map(product=>{
       const id=escapeHTML(product.id);
       const name=escapeHTML(product.name);
