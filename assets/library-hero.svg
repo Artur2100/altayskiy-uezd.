@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 620" role="img" aria-label="Горы Алтая, ботанические книги и растения">
+<defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#f8f7ef"/><stop offset="1" stop-color="#dce4d7"/></linearGradient><linearGradient id="mount" x2="0" y2="1"><stop stop-color="#758b78"/><stop offset="1" stop-color="#304d39"/></linearGradient><linearGradient id="book" x2="0" y2="1"><stop stop-color="#526c4c"/><stop offset="1" stop-color="#203b2a"/></linearGradient><linearGradient id="fade"><stop stop-color="#f4f3eb"/><stop offset=".5" stop-color="#f4f3eb" stop-opacity=".86"/><stop offset="1" stop-color="#f4f3eb" stop-opacity="0"/></linearGradient></defs>
+<rect width="1600" height="620" fill="url(#sky)"/>
+<path d="M550 410 770 120 890 275 1010 95 1230 390 1390 190 1600 430V620H480Z" fill="#8da08d" opacity=".58"/>
+<path d="m650 410 190-250 105 135 95-165 220 280 140-185 200 210v185H600Z" fill="url(#mount)"/>
+<path d="m840 160-42 55 50-16 32 22 31-39 35 28 44-68 95 130-80-32-36 15-48-35-43 27Z" fill="#f4f3eb" opacity=".85"/>
+<path d="M480 460q230-150 420-35t700-5v200H450Z" fill="#526e50" opacity=".55"/>
+<g opacity=".7" fill="none" stroke="#49654b" stroke-width="5"><path d="M1060 620q50-130 15-220m-10 112q-70-62-112-52m122 14q66-78 112-72m-133 130q-66-40-98-20"/><path d="M1170 620q38-95 22-164m-14 83q-45-40-80-30m93-7q50-55 82-50"/></g>
+<g transform="translate(1110 260) rotate(7)"><rect x="30" y="155" width="360" height="160" rx="14" fill="#7d785e" opacity=".35"/><rect x="0" y="120" width="370" height="170" rx="15" fill="#a99a78"/><rect x="12" y="105" width="350" height="160" rx="12" fill="url(#book)"/><path d="M24 116h320v132H24Z" fill="none" stroke="#c7b88d" stroke-width="3"/><path d="M185 120v140" stroke="#c7b88d" stroke-width="3"/><path d="M115 175q70-90 140 0-70 65-140 0Z" fill="none" stroke="#d9d2b7" stroke-width="4"/><path d="M185 143v80m-30-50 30 20 30-20" fill="none" stroke="#d9d2b7" stroke-width="3"/></g>
+<g fill="#f8f7ef" stroke="#718c69" stroke-width="3"><path d="M930 580q-12-80 38-130 30 65-38 130Zm24-20q15-90 82-103-5 76-82 103Zm-36-38q-55-60-108-40 35 66 108 40Z"/><path d="M1020 600q-10-60 26-96 25 49-26 96Zm18-25q17-63 63-74-7 53-63 74Z"/></g>
+<rect width="1040" height="620" fill="url(#fade)"/>
+</svg>
