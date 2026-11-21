@@ -162,7 +162,14 @@
       "description": "Информация о продукте, составе и особенностях хранения.",
       "ozon": "https://ozon.ru/t/2O5AhxW",
       "wildberries": "",
-      "images": [],
+      "images": [
+        "assets/IMG_9386.jpg",
+        "assets/IMG_9387.jpg",
+        "assets/IMG_9388.jpg",
+        "assets/IMG_9389.jpg",
+        "assets/IMG_9390.jpg",
+        "assets/IMG_9391.jpg"
+      ],
       "weights": []
     }
   ]
