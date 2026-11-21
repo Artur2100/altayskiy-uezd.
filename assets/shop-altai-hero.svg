@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 720" role="img" aria-labelledby="t d">
+<title id="t">Алтайский уезд — горы и чайная композиция</title><desc id="d">Закат над горными хребтами Алтая, чашка травяного чая, стеклянный чайник и луговые травы</desc>
+<defs>
+ <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#9eaa8d"/><stop offset=".48" stop-color="#d5b88a"/><stop offset="1" stop-color="#334b39"/></linearGradient>
+ <linearGradient id="mist" x2="0" y2="1"><stop stop-color="#f4dfb4" stop-opacity=".7"/><stop offset="1" stop-color="#f4dfb4" stop-opacity="0"/></linearGradient>
+ <linearGradient id="mount1" x2="0" y2="1"><stop stop-color="#73816d"/><stop offset="1" stop-color="#263e31"/></linearGradient>
+ <linearGradient id="mount2" x2="0" y2="1"><stop stop-color="#435b48"/><stop offset="1" stop-color="#172d22"/></linearGradient>
+ <linearGradient id="gold" x2="0" y2="1"><stop stop-color="#f4d7a0"/><stop offset="1" stop-color="#a8793e"/></linearGradient>
+ <linearGradient id="tea" x2="0" y2="1"><stop stop-color="#d8a64f"/><stop offset="1" stop-color="#87512c"/></linearGradient>
+ <linearGradient id="glass" x2="1" y2="1"><stop stop-color="#fff" stop-opacity=".72"/><stop offset=".45" stop-color="#e7e5cb" stop-opacity=".18"/><stop offset="1" stop-color="#fff" stop-opacity=".48"/></linearGradient>
+ <filter id="soft"><feGaussianBlur stdDeviation="22"/></filter>
+ <filter id="shadow"><feGaussianBlur stdDeviation="18"/></filter>
+</defs>
+<rect width="1600" height="720" fill="url(#sky)"/>
+<circle cx="1190" cy="155" r="100" fill="#f4d8a3" opacity=".68"/><circle cx="1190" cy="155" r="155" fill="#f4d8a3" opacity=".22" filter="url(#soft)"/>
+<path d="M0 390 175 220 300 330 505 110 690 350 860 155 1040 345 1210 175 1400 350 1600 205V720H0Z" fill="#9aa38b" opacity=".72"/>
+<path d="m0 460 190-210 120 135 190-235 190 260 170-205 190 230 180-225 190 225 180-170v455H0Z" fill="url(#mount1)"/>
+<path d="m405 230 95-80 100 138-84-47-30 20-32-27Zm430 40 25-30 80 95-58-30-25 12Zm355-20 20-20 70 88-55-26-20 9Z" fill="#e8e5d5" opacity=".88"/>
+<path d="M0 470q260-95 500-5t520-12q300-90 580 8v259H0Z" fill="#405d42"/>
+<path d="M0 560q260-90 520-8t510-10q300-75 570 0v178H0Z" fill="#203b2b"/>
+<path d="M0 625q310-65 580-8t530-15q280-50 490 2v116H0Z" fill="#14291f" opacity=".75"/>
+<ellipse cx="1190" cy="570" rx="360" ry="48" fill="#101d16" opacity=".38" filter="url(#shadow)"/>
+<!-- tea pot -->
+<g transform="translate(1030 195)">
+ <path d="M205 115q110-45 150 38l-55 28q-28-53-95-24" fill="none" stroke="url(#gold)" stroke-width="18" stroke-linecap="round"/>
+ <path d="M65 125q-75-55-115 8l70 35q30-35 75 4" fill="none" stroke="url(#gold)" stroke-width="16" stroke-linecap="round"/>
+ <path d="M85 80q-8-52 48-52t48 52" fill="none" stroke="#d9c49a" stroke-width="12"/>
+ <ellipse cx="133" cy="80" rx="112" ry="27" fill="#e7dfc9" opacity=".65"/>
+ <path d="M18 105q-8 155 38 202 76 48 154-2 48-57 37-200-110-46-229 0Z" fill="url(#glass)" stroke="#ead7b4" stroke-width="7"/>
+ <path d="M31 172q104 32 216 0l-8 108q-94 50-190 0Z" fill="url(#tea)" opacity=".88"/>
+ <path d="M40 175q90 25 197 0" fill="none" stroke="#f4d9a3" stroke-width="5" opacity=".75"/>
+ <path d="M75 90q-10 125 20 190" fill="none" stroke="#fff" stroke-width="8" opacity=".45" stroke-linecap="round"/>
+ <ellipse cx="133" cy="80" rx="105" ry="18" fill="#f2e6cc" stroke="#c7b58f" stroke-width="5"/>
+ <ellipse cx="133" cy="72" rx="43" ry="10" fill="#a88957"/>
+ <circle cx="133" cy="40" r="17" fill="url(#gold)"/>
+</g>
+<!-- cup -->
+<g transform="translate(840 390)">
+ <ellipse cx="105" cy="145" rx="132" ry="27" fill="#101b14" opacity=".38"/>
+ <path d="M12 35h188l-20 94q-12 44-74 44t-75-44Z" fill="url(#glass)" stroke="#ead8b7" stroke-width="7"/>
+ <path d="M25 82h161l-10 45q-13 35-70 35t-68-35Z" fill="url(#tea)"/>
+ <path d="M198 58q93-25 80 43-9 51-85 35" fill="none" stroke="#e8d5b2" stroke-width="17"/>
+ <ellipse cx="106" cy="36" rx="95" ry="18" fill="#f2e6d2" stroke="#c9b997" stroke-width="6"/>
+ <path d="M67 8q-30-38 4-68m35 65q-12-40 19-70" fill="none" stroke="#f4e8d0" stroke-width="7" stroke-linecap="round" opacity=".65"/>
+</g>
+<!-- botanical sprigs -->
+<g fill="none" stroke="#b5a36e" stroke-width="5" stroke-linecap="round">
+ <path d="M650 680q-10-120 52-220m-28 135q-70-20-92-72m112 10q60-40 63-95m-112 170q-70-2-98-48"/>
+ <path d="M1480 700q-10-120-65-205m42 125q70-20 95-70m-110 20q-58-45-58-95m75 180q68 5 95-40"/>
+</g>
+<g fill="#9a9d63"><ellipse cx="586" cy="523" rx="35" ry="13" transform="rotate(32 586 523)"/><ellipse cx="690" cy="548" rx="38" ry="14" transform="rotate(-28 690 548)"/><ellipse cx="620" cy="620" rx="38" ry="14" transform="rotate(18 620 620)"/><ellipse cx="1505" cy="530" rx="35" ry="13" transform="rotate(-32 1505 530)"/><ellipse cx="1410" cy="555" rx="38" ry="14" transform="rotate(28 1410 555)"/></g>
+<g fill="#e7d6a8"><circle cx="655" cy="445" r="8"/><circle cx="1460" cy="475" r="7"/><circle cx="570" cy="590" r="6"/></g>
+<rect width="1600" height="720" fill="url(#mist)" opacity=".12"/>
+<path d="M0 0h1600v720H0Z" fill="none" stroke="#d7bd88" stroke-opacity=".35" stroke-width="3"/>
+</svg>
