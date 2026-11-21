@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Магазин «Алтайский уезд»: растительные продукты и травяные сборы. Поиск, фильтры и переход к покупке на маркетплейсах.">
+  <meta name="theme-color" content="#f7f8f3">
+  <link rel="canonical" href="https://altayskiy-uezd.ru/shop.html">
+  <title>Магазин — Алтайский уезд</title>
+  <style>
+    :root{--ink:#18392d;--muted:#718078;--green:#315f45;--green-dark:#204b36;--pale:#e8eee4;--line:#dfe6dc;--paper:#fffdf8;--cream:#f3f1e8}
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.55}a{color:inherit;text-decoration:none}button,input,select{font:inherit}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+    header{border-bottom:1px solid var(--line);background:#fff} .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:11px}.brand img{width:48px;height:48px;object-fit:contain;border-radius:50%}.brand strong{display:block;font-size:16px}.brand small{display:block;color:var(--muted);font-size:11px}.back{font-size:13px;font-weight:700;color:var(--green-dark)}
+    .intro{padding:48px 0 28px;background:linear-gradient(130deg,#f5f7f1,#fff)}.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);font-weight:800}.intro h1{font-size:clamp(34px,5vw,52px);line-height:1.08;margin:10px 0}.intro p{color:var(--muted);max-width:650px;margin:0}
+    .toolbar{padding:28px 0 18px}.search{width:100%;border:1px solid var(--line);border-radius:14px;padding:15px 17px;background:#fff;color:var(--ink);outline:none}.search:focus,.select:focus{border-color:#8eaa8a;box-shadow:0 0 0 3px #e8eee4}
+    .filters{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px}.filter-label{font-size:12px;font-weight:750;color:var(--muted);margin-right:2px}.filter-chip{border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);padding:8px 14px;font-size:12px;cursor:pointer}.filter-chip[aria-pressed=true]{background:var(--green);border-color:var(--green);color:#fff}.select{border:1px solid var(--line);border-radius:10px;padding:9px 12px;background:#fff;color:var(--ink);font-size:12px}.count{margin:18px 0 0;color:var(--muted);font-size:12px}
+    .products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding:10px 0 70px}.product{border:1px solid var(--line);border-radius:20px;padding:18px;background:#fff;display:flex;flex-direction:column;min-width:0;box-shadow:0 5px 20px #243d3205}.product-gallery{margin-bottom:16px}.gallery-main{height:220px;border-radius:14px;background:#f6f7f3;overflow:hidden}.gallery-main img{width:100%;height:100%;object-fit:contain}.gallery-thumbs{display:flex;gap:7px;overflow-x:auto;padding:9px 1px 2px}.gallery-thumb{width:48px;height:48px;flex:0 0 48px;padding:2px;border:1px solid var(--line);border-radius:9px;background:#fff;cursor:pointer}.gallery-thumb.is-active{border:2px solid var(--green)}.gallery-thumb img{width:100%;height:100%;object-fit:cover;border-radius:6px}.product h2{font-size:20px;line-height:1.25;margin:0 0 4px}.category{font-size:11px;color:var(--green);font-weight:750}.product p{font-size:13px;color:var(--muted);margin:10px 0 16px}.weights{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 15px}.weight-tag{font-size:11px;padding:5px 9px;border-radius:999px;background:var(--pale);color:var(--green-dark)}.no-weight{font-size:11px;color:#8a968e;margin:0 0 15px}.links{display:grid;gap:8px;margin-top:auto}.btn{display:flex;justify-content:center;align-items:center;border-radius:999px;padding:11px 14px;font-size:12px;font-weight:750}.ozon{background:#0866ff;color:white}.wb{background:#cb168b;color:white}.empty{grid-column:1/-1;text-align:center;padding:44px 20px;border:1px dashed var(--line);border-radius:18px;color:var(--muted)}
+    footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:12px}.footer-row{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    @media(max-width:850px){.products{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.wrap{width:min(100% - 28px,1160px)}.nav{height:68px}.brand img{width:42px;height:42px}.intro{padding:38px 0 24px}.products{grid-template-columns:1fr;gap:14px;padding-bottom:45px}.gallery-main{height:250px}}
+  </style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="index.html"><img src="assets/logo-altayskiy-uezd.jpeg" alt=""><span><strong>Алтайский уезд</strong><small>Растительная продукция</small></span></a><a class="back" href="index.html">← На главную</a></div></header>
+<main>
+  <section class="intro"><div class="wrap"><span class="eyebrow">Каталог бренда</span><h1>Магазин «Алтайский уезд»</h1><p>Выберите продукт, посмотрите фотографии и перейдите на удобный маркетплейс для оформления заказа.</p></div></section>
+  <section class="wrap toolbar" aria-label="Поиск и фильтры">
+    <input id="search" class="search" type="search" placeholder="Найти продукт по названию или описанию…" aria-label="Поиск по товарам">
+    <div class="filters"><span class="filter-label">Фасовка:</span>
+      <button class="filter-chip" type="button" data-weight="all" aria-pressed="true">Любая</button>
+      <button class="filter-chip" type="button" data-weight="50" aria-pressed="false">50 г</button>
+      <button class="filter-chip" type="button" data-weight="100" aria-pressed="false">100 г</button>
+      <button class="filter-chip" type="button" data-weight="500" aria-pressed="false">500 г</button>
+      <span class="filter-label">Категория:</span><select class="select" id="category" aria-label="Фильтр по категории"><option value="all">Все категории</option></select>
+    </div>
+    <p class="count" id="count" aria-live="polite">Загружаем товары…</p>
+  </section>
+  <section class="wrap"><div class="products" id="products" aria-live="polite"></div></section>
+</main>
+<footer><div class="wrap footer-row"><span>© <span id="year"></span> Алтайский уезд</span><a href="index.html">Вернуться на главную</a></div></footer>
+<script>
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const asset=v=>typeof v==='string'&&/^\/?assets\/[\wа-яА-ЯёЁ .()_-]+\.(jpg|jpeg|png|webp)$/i.test(v)&&!v.includes('..')?v:'';
+const safeURL=v=>{try{const u=new URL(v);return u.protocol==='https:'?u.href:''}catch{return ''}};
+let allProducts=[],activeWeight='all';
+const productsEl=document.getElementById('products'),searchEl=document.getElementById('search'),categoryEl=document.getElementById('category'),countEl=document.getElementById('count');
+function gallery(images,name){const valid=(Array.isArray(images)?images:[]).map(asset).filter(Boolean);if(!valid.length)return '';return '<div class="product-gallery" data-gallery><div class="gallery-main"><img src="'+valid[0]+'" alt="'+esc(name)+' — фотография товара" data-gallery-main loading="lazy" decoding="async"></div><div class="gallery-thumbs">'+valid.map((src,i)=>'<button class="gallery-thumb '+(!i?'is-active':'')+'" type="button" data-image="'+src+'" data-alt="'+esc(name)+' — фотография '+(i+1)+'" aria-label="Фотография '+(i+1)+'"><img src="'+src+'" alt="" loading="lazy" decoding="async"></button>').join('')+'</div></div>'}
+function render(){const q=searchEl.value.trim().toLocaleLowerCase('ru');const cat=categoryEl.value;const filtered=allProducts.filter(p=>(!q||[p.name,p.category,p.description].join(' ').toLocaleLowerCase('ru').includes(q))&&(cat==='all'||p.category===cat)&&(activeWeight==='all'||(Array.isArray(p.weights)&&p.weights.includes(Number(activeWeight)))));countEl.textContent='Показано товаров: '+filtered.length+' из '+allProducts.length;
+if(!filtered.length){productsEl.innerHTML='<div class="empty">'+(activeWeight!=='all'?'Для фасовки '+activeWeight+' г пока не указаны товары. Мы добавим доступные варианты после уточнения фасовки.':'По вашему запросу ничего не найдено. Попробуйте изменить поиск или фильтры.')+'</div>';return;}
+productsEl.innerHTML=filtered.map(p=>{const id=esc(p.id),name=esc(p.name),cat=esc(p.category),desc=esc(p.description),weights=Array.isArray(p.weights)?p.weights.filter(n=>[50,100,500].includes(Number(n))):[];const oz=safeURL(p.ozon),wb=safeURL(p.wildberries);return '<article class="product" id="product-'+id+'">'+gallery(p.images,p.name)+'<span class="category">'+cat+'</span><h2>'+name+'</h2><p>'+desc+'</p>'+(weights.length?'<div class="weights" aria-label="Доступная фасовка">'+weights.map(n=>'<span class="weight-tag">'+n+' г</span>').join('')+'</div>':'<div class="no-weight">Фасовка уточняется</div>')+'<div class="links">'+(oz?'<a class="btn ozon" data-marketplace="ozon" data-product-id="'+id+'" href="'+oz+'" target="_blank" rel="noopener">Купить на Ozon ↗</a>':'')+(wb?'<a class="btn wb" data-marketplace="wildberries" data-product-id="'+id+'" href="'+wb+'" target="_blank" rel="noopener">Купить на Wildberries ↗</a>':'')+'</div></article>'}).join('');
+productsEl.querySelectorAll('[data-gallery]').forEach(g=>{const main=g.querySelector('[data-gallery-main]');g.querySelectorAll('.gallery-thumb').forEach(b=>{const change=()=>{main.src=b.dataset.image;main.alt=b.dataset.alt;g.querySelectorAll('.gallery-thumb').forEach(x=>x.classList.toggle('is-active',x===b))};b.addEventListener('click',change);b.addEventListener('mouseenter',change)})});
+}
+document.querySelectorAll('[data-weight]').forEach(b=>b.addEventListener('click',()=>{activeWeight=b.dataset.weight;document.querySelectorAll('[data-weight]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render()}));
+searchEl.addEventListener('input',render);categoryEl.addEventListener('change',render);
+productsEl.addEventListener('click',e=>{const a=e.target.closest('a[data-marketplace]');if(a&&typeof window.ym==='function')window.ym(114478568,'reachGoal','marketplace_click',{marketplace:a.dataset.marketplace,product_id:a.dataset.productId})});
+fetch('/content/products.json').then(r=>{if(!r.ok)throw new Error('catalog');return r.json()}).then(d=>{allProducts=Array.isArray(d.items)?d.items:[];const cats=[...new Set(allProducts.map(p=>p.category).filter(Boolean))];categoryEl.innerHTML='<option value="all">Все категории</option>'+cats.map(c=>'<option value="'+esc(c)+'">'+esc(c)+'</option>').join('');render()}).catch(()=>{countEl.textContent='Не удалось загрузить каталог';productsEl.innerHTML='<div class="empty">Каталог временно недоступен. Попробуйте обновить страницу позже.</div>'});
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
