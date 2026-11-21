@@ -28,6 +28,11 @@ collections:
               - { label: "Название", name: "name", widget: "string" }
               - { label: "Категория", name: "category", widget: "string" }
               - { label: "Описание", name: "description", widget: "text" }
+              - label: "Доступная фасовка, граммы"
+                name: "weights"
+                widget: "list"
+                required: false
+                field: { label: "Граммовка", name: "weight", widget: "number", min: 1, max: 5000 }
               - { label: "Ссылка на Ozon", name: "ozon", widget: "string", required: false }
               - { label: "Ссылка на Wildberries", name: "wildberries", widget: "string", required: false }
               - label: "Фотографии (пути к файлам)"
