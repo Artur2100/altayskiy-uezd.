@@ -14,7 +14,8 @@
         "assets/IMG_9275.jpg",
         "assets/IMG_9276.jpg",
         "assets/IMG_9277.jpg"
-      ]
+      ],
+      "weights": []
     },
     {
       "id": "troychatka",
@@ -32,7 +33,8 @@
         "assets/06-troichatka-brewing.jpg",
         "assets/07-troichatka-contraindications.jpg",
         "assets/08-troichatka-brand.jpg"
-      ]
+      ],
+      "weights": []
     },
     {
       "id": "aspen",
@@ -48,7 +50,8 @@
         "assets/IMG_9289.jpg",
         "assets/IMG_9290.jpg",
         "assets/IMG_9277.jpg"
-      ]
+      ],
+      "weights": []
     },
     {
       "id": "tansy",
@@ -62,7 +65,8 @@
         "assets/IMG_9314.jpg",
         "assets/IMG_9316.jpg",
         "assets/IMG_9277.jpg"
-      ]
+      ],
+      "weights": []
     },
     {
       "id": "chaga",
@@ -78,7 +82,8 @@
         "assets/IMG_9321.jpg",
         "assets/IMG_9322.jpg",
         "assets/IMG_9277.jpg"
-      ]
+      ],
+      "weights": []
     },
     {
       "id": "milk-thistle",
@@ -94,7 +99,8 @@
         "assets/IMG_9309.jpg",
         "assets/IMG_9310.jpg",
         "assets/IMG_9277.jpg"
-      ]
+      ],
+      "weights": []
     }
   ]
 }
