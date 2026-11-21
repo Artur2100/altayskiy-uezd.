@@ -15,6 +15,18 @@
   <meta property="og:url" content="https://altayskiy-uezd.netlify.app/">
   <meta property="og:image" content="https://altayskiy-uezd.netlify.app/hero-altai.jpg">
   <meta name="twitter:card" content="summary_large_image">
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+      m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r)return;}
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a);
+    })(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=114478568','ym');
+    ym(114478568,'init',{ssr:true,webvisor:true,clickmap:true,trackLinks:true,accurateTrackBounce:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/114478568" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+  <!-- /Yandex.Metrika counter -->
   <title>Алтайский уезд — травы и растительная продукция</title>
   <link rel="preload" as="image" href="/hero-altai.jpg" fetchpriority="high">
   <style>
@@ -848,6 +860,15 @@
     initProductGalleries();
   };
   fetch('/content/products.json').then(response=>{if(!response.ok)throw new Error('Catalog request failed');return response.json();}).then(data=>renderProducts(data.items)).catch(()=>{const list=document.getElementById('product-list');if(list)list.innerHTML='<p class="smallprint">Не удалось загрузить каталог. Пожалуйста, обновите страницу позже.</p>';});
+  document.addEventListener('click',event=>{
+    const link=event.target.closest('a[data-marketplace][data-product-id]');
+    if(!link || typeof window.ym!=='function')return;
+    window.ym(114478568,'reachGoal','marketplace_click',{
+      marketplace:link.dataset.marketplace,
+      product_id:link.dataset.productId,
+      product_name:link.closest('.product')?.querySelector('h3')?.textContent?.trim()||''
+    });
+  });
   document.getElementById('year').textContent=new Date().getFullYear();
   const siteHeader=document.querySelector('header');
   const updateHeader=()=>siteHeader.classList.toggle('is-scrolled',window.scrollY>24);
