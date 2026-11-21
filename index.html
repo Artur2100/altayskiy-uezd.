@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Алтайский уезд — растительная продукция: крапива, чага, пижма, расторопша и другие травяные продукты. Каталог и полезные материалы.">
+  <meta name="description" content="Алтайский уезд — растительная продукция: крапива, чага, пижма, растительные продукты и травяные сборы. Каталог и полезные материалы.">
   <meta name="theme-color" content="#f7f8f3">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://altayskiy-uezd.netlify.app/">
@@ -82,6 +82,11 @@
     .product p{font-size:13px;color:var(--muted);margin:7px 0 17px}
     .product .btn{margin-top:auto;width:100%}.product-market-links{display:grid;gap:9px;margin-top:auto}.product-market-links .btn{margin-top:0;width:100%}.product .btn.wb-product{background:#cb168b;color:#fff}.product .btn.wb-product:hover{background:#a91072;transform:translateY(-1px)}
     .product .market-note{font-size:11px;color:#89958d;text-align:center;margin-top:8px}
+    .catalog-more-card{border:1px solid #dfe6dc;border-radius:20px;padding:28px;background:linear-gradient(145deg,#f3f6ef,#e8eee4);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;min-height:255px}
+    .catalog-more-kicker{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:750;color:#587b53}
+    .catalog-more-card h3{font-size:23px;line-height:1.2;margin:12px 0 8px;color:#18392d}
+    .catalog-more-card p{font-size:13px;color:#718078;margin:0 0 20px}
+    .catalog-more-card .btn{margin-top:auto}
     .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px}
     .about-panel{border-radius:22px;background:var(--cream);padding:32px}
     .benefits{display:grid;gap:18px;margin-top:25px}
@@ -350,7 +355,7 @@
   </div>
   <div id="mobile-nav" hidden class="wrap" style="padding:0 0 14px;gap:16px;flex-wrap:wrap;font-size:13px">
     <a href="#home">Главная</a>
-    <a href="#catalog">Каталог</a>
+    <a href="shop.html">Магазин</a>
     <a href="#about">О бренде</a>
     <a href="#articles">Полезное</a>
     <a href="#contacts">Контакты</a>
@@ -410,7 +415,7 @@
     <div class="wrap">
       <div class="section-head">
         <div><h2>Наш ассортимент</h2><p class="sub">Выберите продукт и перейдите на Ozon или Wildberries.</p></div>
-        <span class="smallprint">6 продуктов в каталоге</span>
+        <span class="smallprint">5 продуктов в подборке</span>
       </div>
       <div class="products" id="product-list" aria-live="polite"><p class="smallprint">Загружаем каталог…</p></div>
       </div>
@@ -790,8 +795,8 @@
     <div class="wrap market-box">
       <div><h2>Выбирайте удобный способ покупки</h2><p>Перейдите на маркетплейс и оформите заказ там.</p></div>
       <div class="market-buttons">
-        <a class="btn market-btn" href="#catalog">Товары на Ozon ↗</a>
-        <a class="btn market-btn wb" href="#catalog">Карточки на Wildberries ↗</a>
+        <a class="btn market-btn" href="shop.html">Товары на Ozon ↗</a>
+        <a class="btn market-btn wb" href="shop.html">Карточки на Wildberries ↗</a>
       </div>
     </div>
   </section>
@@ -844,7 +849,8 @@
     const list=document.getElementById('product-list');
     if(!list)return;
     if(!Array.isArray(items)||!items.length){list.innerHTML='<p class="smallprint">Каталог временно недоступен. Попробуйте обновить страницу.</p>';return;}
-    list.innerHTML=items.map(product=>{
+    const homepageItems=items.filter(product=>product.id!=='milk-thistle');
+    list.innerHTML=homepageItems.map(product=>{
       const id=escapeHTML(product.id);
       const name=escapeHTML(product.name);
       const category=escapeHTML(product.category);
@@ -856,7 +862,7 @@
       const wb=safeMarketplaceURL(product.wildberries);
       const links=(ozon?'<a class="btn btn-primary" data-marketplace="ozon" data-product-id="'+id+'" href="'+ozon+'" target="_blank" rel="noopener">Посмотреть на Ozon ↗</a>':'')+(wb?'<a class="btn wb-product" data-marketplace="wildberries" data-product-id="'+id+'" href="'+wb+'" target="_blank" rel="noopener">Посмотреть на Wildberries ↗</a>':'');
       return '<article class="product product-with-gallery" id="product-'+id+'">'+gallery+'<div class="product-top"><div><h3>'+name+'</h3><span class="smallprint">'+category+'</span></div></div><p>'+description+'</p><div class="product-market-links">'+links+'</div></article>';
-    }).join('');
+    }).join('')+'<div class="catalog-more-card"><span class="catalog-more-kicker">Полный ассортимент</span><h3>Все продукты в одном месте</h3><p>Ищите нужное растение, сравнивайте фасовки и переходите к покупке на маркетплейсе.</p><a class="btn btn-primary" href="shop.html">Перейти в магазин <span aria-hidden="true">↗</span></a></div>';
     initProductGalleries();
   };
   fetch('/content/products.json').then(response=>{if(!response.ok)throw new Error('Catalog request failed');return response.json();}).then(data=>renderProducts(data.items)).catch(()=>{const list=document.getElementById('product-list');if(list)list.innerHTML='<p class="smallprint">Не удалось загрузить каталог. Пожалуйста, обновите страницу позже.</p>';});
