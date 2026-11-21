@@ -154,6 +154,16 @@
         "assets/IMG_9277.jpg"
       ],
       "weights": []
+    },
+    {
+      "id": "chamomile",
+      "name": "Ромашка",
+      "category": "Растительное сырьё",
+      "description": "Информация о продукте, составе и особенностях хранения.",
+      "ozon": "https://ozon.ru/t/2O5AhxW",
+      "wildberries": "",
+      "images": [],
+      "weights": []
     }
   ]
 }
