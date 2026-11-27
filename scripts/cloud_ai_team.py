@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Nine real cloud LLM specialists on Gemini free tier; hard-stops at fixed request caps."""
 from __future__ import annotations
-import json, os, re, sys, time
+import json, os, re, sys, time, time
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
