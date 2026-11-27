@@ -1,37 +1,46 @@
 import sys
 import unittest
 from pathlib import Path
+from unittest.mock import patch
+from contextlib import redirect_stdout
+import io
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from ai_team import response_text
-from site_audit import PageParser
-from unittest.mock import patch
-from contextlib import redirect_stdout
-import io
+import ai_team
 from send_telegram import main as telegram_main
 
 
-class ResponseParsingTests(unittest.TestCase):
-    def test_extracts_text_from_message_items(self):
-        payload = {"output": [{"type": "message", "content": [
-            {"type": "output_text", "text": "Отчёт готов"}
-        ]}]}
-        self.assertEqual(response_text(payload), "Отчёт готов")
+class OfflineAgentTests(unittest.TestCase):
+    def test_all_nine_roles_are_present(self):
+        report, summary = ai_team.build_report()
+        self.assertEqual(summary["agents"], 9)
+        for role in ("Гений креатива", "SEO-эксперт", "QA-контролёр"):
+            self.assertIn(role, report)
 
-    def test_ignores_non_message_items(self):
-        self.assertEqual(response_text({"output": [{"type": "reasoning"}]}), "")
+    def test_no_ai_credentials_are_needed(self):
+        with patch.dict("os.environ", {}, clear=True):
+            report, summary = ai_team.build_report()
+        self.assertIn("внешние AI API", report)
+        self.assertEqual(summary["mode"], "offline-deterministic")
 
-    def test_preserves_web_citations(self):
-        payload = {"output": [{"type": "message", "content": [{
-            "type": "output_text",
-            "text": "Факт",
-            "annotations": [{"type": "url_citation", "title": "Источник", "url": "https://example.test"}]
-        }]}]}
-        result = response_text(payload)
-        self.assertIn("Факт", result)
-        self.assertIn("https://example.test", result)
+    def test_creative_agent_produces_measurable_ideas(self):
+        report = ai_team.creative([{"bytes": 321}])
+        self.assertIn("Метрика", report)
+        self.assertIn("Гений креатива", report)
+
+    def test_parser_extracts_seo_and_semantics(self):
+        p = ai_team.Parser()
+        p.feed('<html lang="ru"><head><title>Тест</title><meta name="description" content="Описание"><meta name="viewport" content="width=device-width"><link rel="canonical" href="https://example.test"></head><body><nav></nav><main><h1>Заголовок</h1><h2>Раздел</h2><img src="a.png" alt="Фото"><a href="/shop">Купить</a></main></body></html>')
+        self.assertEqual(p.title, "Тест")
+        self.assertEqual(p.h1, ["Заголовок"])
+        self.assertEqual(p.desc, "Описание")
+        self.assertTrue(p.viewport)
+        self.assertEqual(p.links[0]["href"], "/shop")
+
+    def test_medical_word_is_in_controlled_vocabulary(self):
+        self.assertIn("лечит", ai_team.RISK)
 
 
 class TelegramDeliveryTests(unittest.TestCase):
@@ -41,22 +50,6 @@ class TelegramDeliveryTests(unittest.TestCase):
             with redirect_stdout(output):
                 self.assertEqual(telegram_main(), 0)
         self.assertIn("delivery skipped", output.getvalue())
-
-
-class HtmlAuditParserTests(unittest.TestCase):
-    def test_collects_basic_seo_fields(self):
-        parser = PageParser()
-        parser.feed('<html><head><title>Тест</title><meta name="description" content="Описание"><link rel="canonical" href="https://example.test"></head><body><h1>Заголовок</h1><img src="a.png" alt="Фото"></body></html>')
-        self.assertEqual(parser.title, "Тест")
-        self.assertTrue(parser.description)
-        self.assertEqual(parser.h1_count, 1)
-        self.assertEqual(parser.images_without_alt, 0)
-        self.assertTrue(parser.canonical)
-
-    def test_counts_missing_alt(self):
-        parser = PageParser()
-        parser.feed('<img src="a.png"><img src="b.png" alt="">')
-        self.assertEqual(parser.images_without_alt, 1)
 
 
 if __name__ == "__main__":

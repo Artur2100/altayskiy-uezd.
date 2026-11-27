@@ -14,10 +14,10 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  ai-report:
-    name: Run specialist agents and build report
+  offline-team-report:
+    name: Run nine offline specialist agents
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 15
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -27,30 +27,32 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: Validate Python scripts
+        run: python -m py_compile scripts/ai_team.py scripts/site_audit.py scripts/send_telegram.py
+
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+
       - name: Run static site audit
         run: python scripts/site_audit.py
 
-      - name: Validate Python runtime syntax
-        run: python -m py_compile scripts/ai_team.py scripts/site_audit.py scripts/send_telegram.py
-
-      - name: Run AI specialist agents
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY || secrets.OPEN_AI_KEY }}
-          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+      - name: Run nine offline specialist agents
         run: python scripts/ai_team.py
 
-      - name: Send AI report to Telegram when configured
-        if: success()
+      - name: Send report to Telegram when configured
+        if: always()
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python scripts/send_telegram.py
 
-      - name: Upload AI report
+      - name: Upload Markdown and JSON reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: daily-ai-team-report-${{ github.run_number }}
-          path: reports/daily-ai-report-*.md
+          path: |
+            reports/daily-ai-report-*.md
+            reports/daily-ai-report-*.json
           if-no-files-found: warn
           retention-days: 30
