@@ -42,6 +42,10 @@ class SiteFoundationTests(unittest.TestCase):
   nettle=[x for x in items if x["name"]=="Крапива"]
   self.assertEqual(sorted({w for x in nettle for w in x["weights"]}),[50,100])
 
+ def test_library_has_one_primary_heading(self):
+  html=(ROOT/"library.html").read_text(encoding="utf-8")
+  self.assertEqual(len(re.findall(r"<h1\\b",html,re.I)),1)
+
  def test_sitemap_article_urls_exist(self):
   sitemap=(ROOT/"sitemap.xml").read_text(encoding="utf-8")
   article_files={p.name for p in (ROOT/"articles").glob("*.html")}
