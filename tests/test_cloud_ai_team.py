@@ -44,7 +44,7 @@ class SiteFoundationTests(unittest.TestCase):
 
  def test_library_has_one_primary_heading(self):
   html=(ROOT/"library.html").read_text(encoding="utf-8")
-  self.assertEqual(len(re.findall(r"<h1\\b",html,re.I)),1)
+  self.assertEqual(len(re.findall(r"<h1\b",html,re.I)),1)
 
  def test_sitemap_article_urls_exist(self):
   sitemap=(ROOT/"sitemap.xml").read_text(encoding="utf-8")
