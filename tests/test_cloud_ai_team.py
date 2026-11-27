@@ -45,7 +45,7 @@ class SiteFoundationTests(unittest.TestCase):
  def test_sitemap_article_urls_exist(self):
   sitemap=(ROOT/"sitemap.xml").read_text(encoding="utf-8")
   article_files={p.name for p in (ROOT/"articles").glob("*.html")}
-  urls=re.findall(r"<loc>https://altayskiy-uezd\\.ru/articles/([^<]+)</loc>",sitemap)
+  urls=re.findall(r"<loc>https://altayskiy-uezd\.ru/articles/([^<]+)</loc>",sitemap)
   self.assertTrue(urls)
   self.assertEqual(set(urls)-article_files,set())
 
