@@ -36,7 +36,7 @@ class OfflineAgentTests(unittest.TestCase):
         p.feed('<html lang="ru"><head><title>Тест</title><meta name="description" content="Описание"><meta name="viewport" content="width=device-width"><link rel="canonical" href="https://example.test"></head><body><nav></nav><main><h1>Заголовок</h1><h2>Раздел</h2><img src="a.png" alt="Фото"><a href="/shop">Купить</a></main></body></html>')
         self.assertEqual(p.title, "Тест")
         self.assertEqual(p.h1, ["Заголовок"])
-        self.assertTrue(p.desc if hasattr(p, "desc") else p.description == "Описание")
+        self.assertTrue(p.description)
         self.assertTrue(p.viewport)
         self.assertEqual(p.links[0]["href"], "/shop")
 
