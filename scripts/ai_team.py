@@ -93,7 +93,7 @@ def main() -> int:
         try:
             agent_context = context
             if agent_id == "project-manager":
-                agent_context += "\\n\\nРезультаты специалистов для синтеза:\\n" + "\\n\\n".join(specialist_results)
+                agent_context += "\n\nРезультаты специалистов для синтеза:\n" + "\n\n".join(specialist_results)
             result = call_model(
                 api_key, model,
                 f"Ты — {name} проекта «Алтайский уезд». {task} "
@@ -101,7 +101,7 @@ def main() -> int:
                 agent_context,
             )
             if agent_id != "project-manager":
-                specialist_results.append(f"### {name}\\n{result}")
+                specialist_results.append(f"### {name}\n{result}")
             outputs.append((name, result))
         except Exception as exc:
             failures.append((name, str(exc)))
