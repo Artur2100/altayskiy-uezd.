@@ -541,7 +541,7 @@
     }).join('')+'<div class="catalog-more-card"><span class="catalog-more-kicker">Полный ассортимент</span><h3>Все продукты в одном месте</h3><p>Ищите нужное растение, сравнивайте фасовки и переходите к покупке на маркетплейсе.</p><a class="btn btn-primary" href="shop.html">Перейти в магазин <span aria-hidden="true">↗</span></a></div>';
     initProductGalleries();
   };
-  fetch('/content/products.json').then(response=>{if(!response.ok)throw new Error('Catalog request failed');return response.json();}).then(data=>renderProducts(data.items)).catch(()=>{const list=document.getElementById('product-list');if(list)list.innerHTML='<p class="smallprint">Не удалось загрузить каталог. Пожалуйста, обновите страницу позже.</p>';});
+  fetch('content/products.json').then(response=>{if(!response.ok)throw new Error('Catalog request failed');return response.json();}).then(data=>renderProducts(data.items)).catch(()=>{const list=document.getElementById('product-list');if(list)list.innerHTML='<p class="smallprint">Не удалось загрузить каталог. Пожалуйста, обновите страницу позже.</p>';});
   document.addEventListener('click',event=>{
     const link=event.target.closest('a[data-marketplace][data-product-id]');
     if(!link || typeof window.ym!=='function')return;
