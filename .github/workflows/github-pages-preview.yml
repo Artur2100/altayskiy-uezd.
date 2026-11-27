@@ -1,0 +1,58 @@
+name: Free GitHub Pages preview
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'shop.html'
+      - 'library.html'
+      - 'articles/**'
+      - 'assets/**'
+      - 'content/**'
+      - 'hero-altai.jpg'
+      - 'robots.txt'
+      - 'sitemap.xml'
+      - '.github/workflows/github-pages-preview.yml'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare static website
+        run: |
+          mkdir -p _site
+          cp -a index.html shop.html library.html assets content _site/
+          if [ -d articles ]; then cp -a articles _site/; fi
+          if [ -f hero-altai.jpg ]; then cp hero-altai.jpg _site/; fi
+          if [ -f robots.txt ]; then cp robots.txt _site/; fi
+          if [ -f sitemap.xml ]; then cp sitemap.xml _site/; fi
+          touch _site/.nojekyll
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
