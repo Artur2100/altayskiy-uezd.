@@ -9,7 +9,6 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import ai_team
-from site_audit import PageParser
 from send_telegram import main as telegram_main
 
 
@@ -32,11 +31,11 @@ class OfflineAgentTests(unittest.TestCase):
         self.assertIn("Гений креатива", report)
 
     def test_parser_extracts_seo_and_semantics(self):
-        p = PageParser()
+        p = ai_team.Parser()
         p.feed('<html lang="ru"><head><title>Тест</title><meta name="description" content="Описание"><meta name="viewport" content="width=device-width"><link rel="canonical" href="https://example.test"></head><body><nav></nav><main><h1>Заголовок</h1><h2>Раздел</h2><img src="a.png" alt="Фото"><a href="/shop">Купить</a></main></body></html>')
         self.assertEqual(p.title, "Тест")
         self.assertEqual(p.h1, ["Заголовок"])
-        self.assertTrue(p.description)
+        self.assertEqual(p.desc, "Описание")
         self.assertTrue(p.viewport)
         self.assertEqual(p.links[0]["href"], "/shop")
 
