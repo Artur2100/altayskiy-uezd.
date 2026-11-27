@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Nine real cloud LLM specialists on Gemini free tier; hard-stops at fixed request caps."""
 from __future__ import annotations
-import json, os, re, sys, time, time
+import json, os, re, sys, time
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
@@ -99,9 +99,8 @@ def main():
    "Никаких изменений репозитория, коммитов, PR, merge или deploy.\n\n"
    f"ТВОЯ РОЛЬ: {role['name']}\nЗАДАЧА: {role['task']}\n\n"
    f"КОНТЕКСТ САЙТА И ПРЕДЫДУЩИХ РАБОТ:\n{context[-MAX_CONTEXT_CHARS:]}")
-  config=types.GenerateContentConfig(temperature=0.25,max_output_tokens=MAX_OUTPUT_TOKENS)
-  if use_search:
-   config.tools=[types.Tool(google_search=types.GoogleSearch())]
+  tools=[types.Tool(google_search=types.GoogleSearch())] if use_search else None
+  config=types.GenerateContentConfig(temperature=0.25,max_output_tokens=MAX_OUTPUT_TOKENS,tools=tools)
   try:
    response=client.models.generate_content(model=MODEL,contents=prompt,config=config)
   except Exception as e:
