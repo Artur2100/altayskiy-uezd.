@@ -30,6 +30,9 @@ jobs:
       - name: Run static site audit
         run: python scripts/site_audit.py
 
+      - name: Validate Python runtime syntax
+        run: python -m py_compile scripts/ai_team.py scripts/site_audit.py
+
       - name: Run AI specialist agents
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
