@@ -57,13 +57,13 @@ class SiteFoundationTests(unittest.TestCase):
   seen=set()
   for path in pages:
    html=path.read_text(encoding="utf-8")
-   title=re.search(r"<title[^>]*>([\\s\\S]*?)</title>",html,re.I)
-   description=re.search(r'<meta\\s+name=["\\']description["\\']\\s+content=["\\']([^"\\']*)',html,re.I)
-   canonical=re.search(r'<link\\s+rel=["\\']canonical["\\']\\s+href=["\\']([^"\\']*)',html,re.I)
+   title=re.search(r'<title[^>]*>(.*?)</title>',html,re.I)
+   description=re.search(r'<meta[^>]*name="description"[^>]*content="([^"]*)"',html,re.I)
+   canonical=re.search(r'<link[^>]*rel="canonical"[^>]*href="([^"]*)"',html,re.I)
    self.assertIsNotNone(title,path.name)
    self.assertIsNotNone(description,path.name)
    self.assertIsNotNone(canonical,path.name)
-   self.assertEqual(len(re.findall(r"<h1\\b",html,re.I)),1,path.name)
+   self.assertEqual(len(re.findall(r"<h1",html,re.I)),1,path.name)
    self.assertGreaterEqual(len(description.group(1)),70,path.name)
    self.assertLessEqual(len(description.group(1)),180,path.name)
    self.assertNotIn(canonical.group(1),seen,path.name)
@@ -73,7 +73,7 @@ class SiteFoundationTests(unittest.TestCase):
   from urllib.parse import urlsplit, unquote
   for page in (ROOT/"articles").glob("*.html"):
    html=page.read_text(encoding="utf-8")
-   for raw in re.findall(r'\\bhref=["\\']([^"\\']+)["\\']',html,re.I):
+   for raw in re.findall(r'href="([^"]+)"',html,re.I):
     parsed=urlsplit(raw)
     if parsed.scheme or parsed.netloc or not parsed.path:
      continue
@@ -85,7 +85,7 @@ class SiteFoundationTests(unittest.TestCase):
   ids={item["id"] for item in data["items"]}
   for page in (ROOT/"articles").glob("*.html"):
    html=page.read_text(encoding="utf-8")
-   for product_id in re.findall(r'shop\\.html#product-([a-z0-9-]+)',html):
+   for product_id in re.findall(r'shop[.]html#product-([a-z0-9-]+)',html):
     self.assertIn(product_id,ids,f"{page.name}: unknown product id {product_id}")
 
  def test_sitemap_article_urls_exist(self):
