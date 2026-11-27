@@ -1,0 +1,40 @@
+name: Daily site audit
+
+on:
+  schedule:
+    # 09:00 Asia/Barnaul (UTC+7) = 02:00 UTC
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: daily-site-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    name: Daily structural and SEO baseline
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Run dependency-free site audit
+        run: python scripts/site_audit.py
+
+      - name: Upload daily audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-site-audit-${{ github.run_number }}
+          path: site-audit-report.json
+          if-no-files-found: warn
+          retention-days: 30

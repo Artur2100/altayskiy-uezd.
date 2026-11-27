@@ -1,0 +1,89 @@
+version: 1
+project: "Алтайский уезд"
+repository: "Artur2100/altayskiy-uezd."
+default_branch: main
+mode: hybrid
+daily_report: true
+publication:
+  strategy: pull_request
+  target_branch: main
+  direct_push_to_main: false
+  auto_merge: false
+  owner_approval_required: true
+
+agents:
+  - id: project-manager
+    name: "AI Project Manager"
+    responsibilities:
+      - "Собирать результаты всех специалистов"
+      - "Приоритизировать задачи по влиянию, риску и трудоёмкости"
+      - "Формировать ежедневный сводный отчёт"
+      - "Проверять, что PR соответствует согласованной задаче"
+    outputs: ["daily-report", "prioritized-backlog", "release-checklist"]
+
+  - id: content
+    name: "Content Agent"
+    responsibilities:
+      - "Аудировать существующие статьи и карточки товаров"
+      - "Готовить уникальные и полезные материалы без SEO-спама"
+      - "Проверять факты и указывать источники"
+      - "Сохранять естественный русский язык и редакционный стиль"
+    outputs: ["content-audit", "article-draft", "editorial-plan"]
+
+  - id: seo
+    name: "SEO Agent"
+    responsibilities:
+      - "Проверять title, description, H1-H6, canonical и alt"
+      - "Проверять внутренние ссылки, sitemap.xml и robots.txt"
+      - "Формировать карту поисковых намерений и семантические кластеры"
+      - "Не обещать рост позиций без данных и измерений"
+    outputs: ["seo-audit", "keyword-map", "technical-seo-backlog"]
+
+  - id: design
+    name: "Design Agent"
+    responsibilities:
+      - "Проверять адаптивность, визуальную иерархию и доступность"
+      - "Оценивать сценарии посетителя от входа до перехода на маркетплейс"
+      - "Предлагать конкретные UI/UX улучшения с критериями приёмки"
+      - "Не менять существующий фирменный стиль без обоснования"
+    outputs: ["ux-audit", "design-proposal", "acceptance-criteria"]
+
+  - id: innovation
+    name: "Innovation Agent"
+    responsibilities:
+      - "Предлагать новые функции и контентные форматы"
+      - "Оценивать идеи по ценности для посетителя и бизнеса"
+      - "Формировать проверяемые гипотезы и небольшие эксперименты"
+    outputs: ["idea-card", "experiment-proposal", "roadmap"]
+
+  - id: developer
+    name: "Developer Agent"
+    responsibilities:
+      - "Реализовывать только чётко описанные и приоритизированные задачи"
+      - "Работать в отдельной ветке"
+      - "Запускать доступные проверки и описывать ограничения"
+      - "Создавать PR с файлами, рисками и инструкцией проверки"
+    outputs: ["code-change", "test-results", "pull-request"]
+
+  - id: competitor-analyst
+    name: "Competitor Analyst"
+    responsibilities:
+      - "Сравнивать публичные сайты по контенту, SEO, UX, ассортименту и доверию"
+      - "Фиксировать URL и дату каждого наблюдения"
+      - "Отделять наблюдаемые факты от гипотез"
+      - "Искать возможности дифференциации, а не копирования"
+    outputs: ["competitor-matrix", "benchmark-report", "opportunity-list"]
+
+workflow:
+  daily:
+    - "Проверить структуру и доступные страницы сайта"
+    - "Запустить технический аудит"
+    - "Собрать замечания SEO, контента и UX"
+    - "Проверить выбранные сайты-конкуренты, если доступен веб-поиск"
+    - "Обновить backlog и подготовить сводный отчёт"
+  implementation:
+    - "Создать отдельную ветку от актуальной main"
+    - "Выполнить одну логически связанную группу изменений"
+    - "Проверить diff и доступные тесты"
+    - "Открыть Pull Request в main"
+    - "Остановиться до одобрения владельцем"
