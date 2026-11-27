@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Free competitor research from explicitly configured public URLs; stdlib only."""
 from __future__ import annotations
-import json, re, time
+import json, re, time\nfrom urllib.robotparser import RobotFileParser
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
@@ -44,7 +44,7 @@ def fetch(url):
     if parsed.scheme!="https" or not parsed.netloc: raise ValueError("Only absolute HTTPS URLs are allowed")
     req=Request(url,headers={"User-Agent":UA,"Accept":"text/html"})
     with urlopen(req,timeout=TIMEOUT) as r:
-        ctype=r.headers.get("Content-Type","")
+        if urlparse(r.geturl()).scheme!="https": raise ValueError("Redirected away from HTTPS; blocked")\n        ctype=r.headers.get("Content-Type","")
         if "text/html" not in ctype: raise ValueError("URL did not return HTML")
         raw=r.read(MAX_BYTES+1)
         if len(raw)>MAX_BYTES: raw=raw[:MAX_BYTES]
