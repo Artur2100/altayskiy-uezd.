@@ -19,6 +19,16 @@ class ResponseParsingTests(unittest.TestCase):
     def test_ignores_non_message_items(self):
         self.assertEqual(response_text({"output": [{"type": "reasoning"}]}), "")
 
+    def test_preserves_web_citations(self):
+        payload = {"output": [{"type": "message", "content": [{
+            "type": "output_text",
+            "text": "Факт",
+            "annotations": [{"type": "url_citation", "title": "Источник", "url": "https://example.test"}]
+        }]}]}
+        result = response_text(payload)
+        self.assertIn("Факт", result)
+        self.assertIn("https://example.test", result)
+
 
 class HtmlAuditParserTests(unittest.TestCase):
     def test_collects_basic_seo_fields(self):
