@@ -150,6 +150,9 @@ def main() -> int:
     out.write_text("\n".join(report) + "\n", encoding="utf-8")
     print(f"Report written: {out.relative_to(ROOT)}")
     print(f"Agents succeeded: {len(AGENTS) - len(failures)}/{len(AGENTS)}")
+    for agent_name, error in failures:
+        # Print API diagnostics (never the API key) so GitHub Actions identifies the cause.
+        print(f"Agent failure [{agent_name}]: {error}", file=sys.stderr)
     return 1 if failures else 0
 
 if __name__ == "__main__":
