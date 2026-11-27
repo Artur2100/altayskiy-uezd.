@@ -31,13 +31,20 @@ jobs:
         run: python scripts/site_audit.py
 
       - name: Validate Python runtime syntax
-        run: python -m py_compile scripts/ai_team.py scripts/site_audit.py
+        run: python -m py_compile scripts/ai_team.py scripts/site_audit.py scripts/send_telegram.py
 
       - name: Run AI specialist agents
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
         run: python scripts/ai_team.py
+
+      - name: Send AI report to Telegram when configured
+        if: success()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/send_telegram.py
 
       - name: Upload AI report
         if: always()
