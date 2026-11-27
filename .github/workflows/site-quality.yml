@@ -21,6 +21,9 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: Validate Python scripts
+        run: python -m py_compile scripts/site_audit.py scripts/ai_team.py
+
       - name: Run dependency-free site audit
         run: python scripts/site_audit.py
 
