@@ -16,6 +16,7 @@ class PageParser(HTMLParser):
         self.title_depth = 0
         self.title = ""
         self.description = False
+        self.noindex = False
         self.h1_count = 0
         self.images = 0
         self.images_without_alt = 0
@@ -25,6 +26,8 @@ class PageParser(HTMLParser):
         attrs = dict(attrs)
         if tag == "title":
             self.title_depth += 1
+        elif tag == "meta" and attrs.get("name", "").lower() == "robots":
+            self.noindex = "noindex" in attrs.get("content", "").lower()
         elif tag == "meta" and attrs.get("name", "").lower() == "description":
             self.description = bool(attrs.get("content", "").strip())
         elif tag == "h1":
@@ -57,12 +60,16 @@ def main() -> int:
             issues = []
             if not parser.title.strip():
                 issues.append("missing-title")
-            if not parser.description:
-                issues.append("missing-meta-description")
-            if parser.h1_count == 0:
-                issues.append("missing-h1")
-            elif parser.h1_count > 1:
-                issues.append("multiple-h1")
+            if rel.startswith("admin/"):
+                if not parser.noindex:
+                    issues.append("admin-page-missing-noindex")
+            else:
+                if not parser.description:
+                    issues.append("missing-meta-description")
+                if parser.h1_count == 0:
+                    issues.append("missing-h1")
+                elif parser.h1_count > 1:
+                    issues.append("multiple-h1")
             if parser.images_without_alt:
                 issues.append(f"images-without-alt:{parser.images_without_alt}")
             pages.append({
