@@ -7,6 +7,10 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from ai_team import response_text
 from site_audit import PageParser
+from unittest.mock import patch
+from contextlib import redirect_stdout
+import io
+from send_telegram import main as telegram_main
 
 
 class ResponseParsingTests(unittest.TestCase):
@@ -28,6 +32,15 @@ class ResponseParsingTests(unittest.TestCase):
         result = response_text(payload)
         self.assertIn("Факт", result)
         self.assertIn("https://example.test", result)
+
+
+class TelegramDeliveryTests(unittest.TestCase):
+    def test_skips_cleanly_when_secrets_are_missing(self):
+        output = io.StringIO()
+        with patch.dict("os.environ", {"TELEGRAM_BOT_TOKEN": "", "TELEGRAM_CHAT_ID": ""}):
+            with redirect_stdout(output):
+                self.assertEqual(telegram_main(), 0)
+        self.assertIn("delivery skipped", output.getvalue())
 
 
 class HtmlAuditParserTests(unittest.TestCase):
