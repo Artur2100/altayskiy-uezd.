@@ -81,7 +81,7 @@ def main() -> int:
         print("OPENAI_API_KEY is not configured; AI report skipped.", file=sys.stderr)
         return 2
 
-    model = os.environ.get("OPENAI_MODEL", "gpt-6.2-sol")
+    model = os.environ.get("OPENAI_MODEL", "").strip() or "gpt-6.2-sol"
     now = datetime.now(ZoneInfo("Asia/Barnaul"))
     audit = read_text(ROOT / "site-audit-report.json", 10000) or "Технический JSON-аудит отсутствует."
     inventory = []
